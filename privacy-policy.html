@@ -1,13 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
-    <link rel="icon" type="image/x-icon" href="./img/taco.webp">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felix Pfeifer</title>
+    <link rel="icon" type="image/x-icon" href="./images/Favicon.png" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet" />
 </head>
 <body>
-    
+    <div class="page-container">
+        <header>
+        <div class="logo">
+            <span class="logo-bracket">&lt;</span>FP<span class="logo-bracket">&gt;</span>
+        </div>
+        <nav class="nav-links">
+            <a class="link" href="./index.html#why-me" data-i18n="nav.whyme">Warum ich</a>
+            <a class="link" href="./index.html#skills" data-i18n="nav.skills">Skills</a>
+            <a class="link" href="./index.html#projects" data-i18n="nav.projects">Projekte</a>
+            <a class="link" href="./index.html#contact" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <div class="lang-btn" id="langToggle">
+            <span class="lang-opt lang-active" data-lang="de" onclick="window.setLang('de')">DE</span>
+            <span class="lang-sep">|</span>
+            <span class="lang-opt" data-lang="en" onclick="window.setLang('en')">EN</span>
+        </div>
+        <button class="burger_btn" id="burgerBtn" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="mobile_menu" id="mobileMenu">
+        <button class="mobile_menu_close" id="mobileMenuClose" aria-label="Menü schließen">&times;</button>
+        <nav class="mobile_nav_links">
+            <a class="mobile_link" href="./index.html#why-me" data-i18n="nav.whyme">Warum ich</a>
+            <a class="mobile_link" href="./index.html#skills" data-i18n="nav.skills">Skills</a>
+            <a class="mobile_link" href="./index.html#projects" data-i18n="nav.projects">Projekte</a>
+            <a class="mobile_link" href="./index.html#contact" data-i18n="nav.contact">Kontakt</a>
+            <div class="lang-btn mobile_lang">
+                <span class="lang-opt lang-active" data-lang="de" onclick="window.setLang('de')">DE</span>
+                <span class="lang-sep">|</span>
+                <span class="lang-opt" data-lang="en" onclick="window.setLang('en')">EN</span>
+            </div>
+        </nav>
+    </div>
+
+    <a class="back_arrow" href="./index.html" aria-label="Zurück zur Startseite">
+        <img src="./images/Arrow Back.png" alt="Zurück" />
+    </a>
+
+    <main class="legal_page">
+        <h1 class="legal_headline" data-i18n="privacy.title">Datenschutzerklärung</h1>
+
+        <section class="legal_section">
+            <p data-i18n-html="privacy.intro">Ich, Felix Pfeifer, verpflichte mich, deine Privatsphäre zu schützen
+                und die Sicherheit der personenbezogenen Daten zu gewährleisten, die du bei der Nutzung von
+                <span class="legal_highlight">Portfolio</span> (Produkt) angibst. Diese Datenschutzerklärung
+                erläutert, wie ich deine Daten erhebe, verwende und schütze, wenn du auf das Produkt zugreifst
+                und es nutzt.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="privacy.collect.title">Erhobene Daten</h2>
+            <p data-i18n-html="privacy.collect.text">Ich erhebe personenbezogene Daten wie deinen Namen, deine
+                E-Mail-Adresse und weitere Informationen, die du freiwillig über das Kontaktformular übermittelst.
+                Sensible Daten wie Zahlungsinformationen oder Sozialversicherungsnummern werden nicht erhoben.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="privacy.use.title">Verwendung der Daten</h2>
+            <p data-i18n-html="privacy.use.text">Ich verwende die erhobenen Daten ausschließlich, um deine Anfrage
+                zu beantworten und mit dir in Kontakt zu treten. Deine personenbezogenen Daten werden nicht zu
+                Marketingzwecken an Dritte verkauft, vermietet oder weitergegeben.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="privacy.security.title">Datensicherheit</h2>
+            <p data-i18n-html="privacy.security.text">Ich treffe angemessene Sicherheitsmaßnahmen, um deine
+                personenbezogenen Daten vor unbefugtem Zugriff, Offenlegung, Veränderung oder Zerstörung zu
+                schützen. Bitte beachte jedoch, dass keine Methode der Übertragung über das Internet oder der
+                elektronischen Speicherung vollkommen sicher ist.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="privacy.rights.title">Deine Rechte</h2>
+            <p data-i18n-html="privacy.rights.text">Du hast das Recht, Auskunft über deine gespeicherten
+                personenbezogenen Daten zu erhalten sowie deren Berichtigung oder Löschung zu verlangen.
+                Wende dich dazu jederzeit an die unten angegebene E-Mail-Adresse.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="privacy.changes.title">Änderungen dieser Datenschutzerklärung</h2>
+            <p data-i18n-html="privacy.changes.text">Diese Datenschutzerklärung kann von Zeit zu Zeit aktualisiert
+                werden. Änderungen werden auf dieser Seite mit aktualisiertem Datum veröffentlicht. Ich empfehle
+                dir, diese Datenschutzerklärung regelmäßig zu lesen, um informiert zu bleiben, wie deine Daten
+                geschützt werden.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="privacy.contact.title">Kontakt</h2>
+            <p data-i18n-html="privacy.contact.text">Bei Fragen oder Anliegen zu dieser Datenschutzerklärung oder
+                zum Umgang mit deinen Daten kontaktiere mich bitte unter
+                <a href="mailto:felix@pr-media.at">felix@pr-media.at</a>.</p>
+            <p data-i18n="privacy.date">Stand: 7. Juli 2026</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer_logo">
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>FP<span class="logo-bracket">&gt;</span>
+            </div>
+            <span class="footer_logo_subtitle">frontend developer</span>
+        </div>
+
+        <div class="footer_center">
+            <span class="footer_copyright">&copy; Felix Pfeifer 2026</span>
+            <div class="legal_information">
+                <a class="legal_information_link" href="./legal-notice.html" data-i18n="footer.legal">Legal notice</a>
+                <a class="legal_information_link" href="./privacy-policy.html" data-i18n="footer.privacy">privacy policy</a>
+            </div>
+        </div>
+
+        <div class="social_links">
+            <a class="social_links_btn" href="https://github.com/PfeiferFelix" target="_blank"><img src="./images/Github button.png" alt="GitHub" /></a>
+            <a class="social_links_btn" href="mailto:felix@pr-media.at"><img src="./images/Email button.png" alt="E-Mail" /></a>
+            <a class="social_links_btn" href="https://www.linkedin.com/feed/" target="_blank"><img src="./images/Linkedin button.png" alt="LinkedIn" /></a>
+        </div>
+    </footer>
+    </div>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

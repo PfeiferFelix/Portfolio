@@ -1,13 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal Notice</title>
-    <link rel="icon" type="image/x-icon" href="./img/taco.webp">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felix Pfeifer</title>
+    <link rel="icon" type="image/x-icon" href="./images/Favicon.png" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet" />
 </head>
 <body>
-    
+    <div class="page-container">
+        <header>
+        <div class="logo">
+            <span class="logo-bracket">&lt;</span>FP<span class="logo-bracket">&gt;</span>
+        </div>
+        <nav class="nav-links">
+            <a class="link" href="./index.html#why-me" data-i18n="nav.whyme">Warum ich</a>
+            <a class="link" href="./index.html#skills" data-i18n="nav.skills">Skills</a>
+            <a class="link" href="./index.html#projects" data-i18n="nav.projects">Projekte</a>
+            <a class="link" href="./index.html#contact" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <div class="lang-btn" id="langToggle">
+            <span class="lang-opt lang-active" data-lang="de" onclick="window.setLang('de')">DE</span>
+            <span class="lang-sep">|</span>
+            <span class="lang-opt" data-lang="en" onclick="window.setLang('en')">EN</span>
+        </div>
+        <button class="burger_btn" id="burgerBtn" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="mobile_menu" id="mobileMenu">
+        <button class="mobile_menu_close" id="mobileMenuClose" aria-label="Menü schließen">&times;</button>
+        <nav class="mobile_nav_links">
+            <a class="mobile_link" href="./index.html#why-me" data-i18n="nav.whyme">Warum ich</a>
+            <a class="mobile_link" href="./index.html#skills" data-i18n="nav.skills">Skills</a>
+            <a class="mobile_link" href="./index.html#projects" data-i18n="nav.projects">Projekte</a>
+            <a class="mobile_link" href="./index.html#contact" data-i18n="nav.contact">Kontakt</a>
+            <div class="lang-btn mobile_lang">
+                <span class="lang-opt lang-active" data-lang="de" onclick="window.setLang('de')">DE</span>
+                <span class="lang-sep">|</span>
+                <span class="lang-opt" data-lang="en" onclick="window.setLang('en')">EN</span>
+            </div>
+        </nav>
+    </div>
+
+    <a class="back_arrow" href="./index.html" aria-label="Zurück zur Startseite">
+        <img src="./images/Arrow Back.png" alt="Zurück" />
+    </a>
+
+    <main class="legal_page">
+        <h1 class="legal_headline" data-i18n="legal.title">Impressum</h1>
+
+        <section class="legal_section">
+            <h2 data-i18n="legal.imprint.title">Angaben zum Betreiber</h2>
+            <ul class="legal_list">
+                <li>Felix Pfeifer</li>
+                <li>8354 St. Anna am Aigen</li>
+            </ul>
+            <p>E-Mail: <a href="mailto:felix@pr-media.at">felix@pr-media.at</a></p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="legal.acceptance.title">Annahme der Bedingungen</h2>
+            <p data-i18n-html="legal.acceptance.text">Durch den Zugriff auf und die Nutzung von
+                <span class="legal_highlight">Portfolio</span> (Produkt) erklärst du dich mit den folgenden
+                Bedingungen sowie mit allen Richtlinien oder Änderungen einverstanden, die dir gegebenenfalls
+                von Zeit zu Zeit mitgeteilt werden. Ich, Felix Pfeifer, kann die Bedingungen jederzeit ohne
+                Vorankündigung aktualisieren oder ändern.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="legal.scope.title">Umfang und Eigentum des Produkts</h2>
+            <p data-i18n-html="legal.scope.text1"><span class="legal_highlight">Portfolio</span> wurde im Rahmen
+                eines Webentwicklungs-Bootcamps der <span class="legal_highlight">Developer Akademie GmbH</span>
+                entwickelt. Es dient Bildungszwecken und ist nicht für eine umfangreiche private oder
+                geschäftliche Nutzung vorgesehen. Daher kann keine gleichbleibende Verfügbarkeit,
+                Zuverlässigkeit, Genauigkeit oder sonstige Qualität dieses Produkts garantiert werden.</p>
+            <p data-i18n-html="legal.scope.text2">Das Design von <span class="legal_highlight">Portfolio</span>
+                ist Eigentum der <span class="legal_highlight">Developer Akademie GmbH</span>. Die unbefugte
+                Nutzung, Vervielfältigung, Änderung, Verbreitung oder Replikation des Designs ist strengstens
+                untersagt.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="legal.rights.title">Eigentumsrechte</h2>
+            <p data-i18n-html="legal.rights.text">Abgesehen vom Design, das Eigentum der
+                <span class="legal_highlight">Developer Akademie GmbH</span> ist, behalte ich, Felix Pfeifer,
+                alle Eigentumsrechte an <span class="legal_highlight">Portfolio</span>, einschließlich des
+                zugehörigen urheberrechtlich geschützten Materials, der Marken und anderer geschützter
+                Informationen.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="legal.use.title">Nutzung des Produkts</h2>
+            <p data-i18n-html="legal.use.text"><span class="legal_highlight">Portfolio</span> darf ausschließlich
+                für rechtmäßige Zwecke und im Einklang mit allen geltenden Gesetzen und Vorschriften genutzt
+                werden. Jede Nutzung von <span class="legal_highlight">Portfolio</span> für illegale Aktivitäten
+                oder zur Belästigung, Schädigung, Bedrohung oder Einschüchterung anderer Personen ist
+                strengstens untersagt.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="legal.disclaimer.title">Gewährleistungs- und Haftungsausschluss</h2>
+            <p data-i18n-html="legal.disclaimer.text"><span class="legal_highlight">Portfolio</span> wird ohne
+                Mängelgewähr („as is“) und ohne jegliche ausdrückliche oder stillschweigende Gewährleistung
+                bereitgestellt, einschließlich, aber nicht beschränkt auf die stillschweigende Gewährleistung
+                der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten
+                Dritter. In keinem Fall hafte ich, Felix Pfeifer, oder die
+                <span class="legal_highlight">Developer Akademie</span> für direkte, indirekte, zufällige,
+                besondere, Folge- oder exemplarische Schäden, einschließlich, aber nicht beschränkt auf Schäden
+                aus entgangenem Gewinn, Verlust von Goodwill, Nutzungsausfall, Datenverlust oder anderen
+                immateriellen Verlusten, die aus der Nutzung oder der Leistung von
+                <span class="legal_highlight">Portfolio</span> entstehen, selbst wenn auf die Möglichkeit
+                solcher Schäden hingewiesen wurde.</p>
+        </section>
+
+        <section class="legal_section">
+            <h2 data-i18n="legal.indemnity.title">Schadloshaltung</h2>
+            <p data-i18n-html="legal.indemnity.text">Du erklärst dich damit einverstanden, mich, Felix Pfeifer,
+                die <span class="legal_highlight">Developer Akademie</span> sowie verbundene Partner, leitende
+                Angestellte, Vertreter und Mitarbeiter von sämtlichen Ansprüchen, Forderungen, Verlusten,
+                Schäden, Kosten oder Verbindlichkeiten (einschließlich angemessener Anwaltskosten) freizustellen,
+                zu verteidigen und schadlos zu halten, die sich aus deiner Nutzung von
+                <span class="legal_highlight">Portfolio</span> und/oder deinem Verstoß gegen dieses Impressum
+                ergeben.</p>
+            <p data-i18n-html="legal.contact.text">Bei Fragen oder Hinweisen kontaktiere mich bitte unter
+                <a href="mailto:felix@pr-media.at">felix@pr-media.at</a>.</p>
+            <p data-i18n="legal.date">Stand: 7. Juli 2026</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer_logo">
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>FP<span class="logo-bracket">&gt;</span>
+            </div>
+            <span class="footer_logo_subtitle">frontend developer</span>
+        </div>
+
+        <div class="footer_center">
+            <span class="footer_copyright">&copy; Felix Pfeifer 2026</span>
+            <div class="legal_information">
+                <a class="legal_information_link" href="./legal-notice.html" data-i18n="footer.legal">Legal notice</a>
+                <a class="legal_information_link" href="./privacy-policy.html" data-i18n="footer.privacy">privacy policy</a>
+            </div>
+        </div>
+
+        <div class="social_links">
+            <a class="social_links_btn" href="https://github.com/PfeiferFelix" target="_blank"><img src="./images/Github button.png" alt="GitHub" /></a>
+            <a class="social_links_btn" href="mailto:felix@pr-media.at"><img src="./images/Email button.png" alt="E-Mail" /></a>
+            <a class="social_links_btn" href="https://www.linkedin.com/feed/" target="_blank"><img src="./images/Linkedin button.png" alt="LinkedIn" /></a>
+        </div>
+    </footer>
+    </div>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

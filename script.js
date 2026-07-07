@@ -1,6 +1,12 @@
-document.getElementById("contactSendBtn").addEventListener("click", sendContactForm);
-document.getElementById("burgerBtn").addEventListener("click", openMobileMenu);
-document.getElementById("mobileMenuClose").addEventListener("click", closeMobileMenu);
+let contactSendBtn = document.getElementById("contactSendBtn");
+if (contactSendBtn) contactSendBtn.addEventListener("click", sendContactForm);
+
+let burgerBtn = document.getElementById("burgerBtn");
+if (burgerBtn) burgerBtn.addEventListener("click", openMobileMenu);
+
+let mobileMenuClose = document.getElementById("mobileMenuClose");
+if (mobileMenuClose) mobileMenuClose.addEventListener("click", closeMobileMenu);
+
 document.querySelectorAll(".mobile_link").forEach(function (link) {
     link.addEventListener("click", closeMobileMenu);
 });

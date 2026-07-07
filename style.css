@@ -1,0 +1,1531 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background: linear-gradient(to bottom,
+            #0B042D 22%,
+            #1F0B80 36%,
+            #0B042F 67%,
+            #241085 100%);
+    min-height: 100vh;
+}
+
+.page-container {
+    max-width: 1520px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+header {
+    margin-top: 20px;
+    height: 92px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto Mono", monospace;
+    position: relative;
+}
+
+.link {
+    color: #E15544;
+    text-decoration: none;
+    font-size: 22px;
+
+}
+
+.logo {
+    color: #E15544;
+    font-size: 34px;
+    display: flex;
+    font-family: "Press Start 2P", monospace;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+    margin-left: 60px;
+}
+
+.lang-btn {
+    color: #E15544;
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 100px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+}
+
+.skills-section {
+    height: 460px;
+
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(6, min-content);
+    justify-content: center;
+    gap: 50px;
+    padding-top: 40px;
+}
+
+.skill-item img {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+}
+
+.headline_skills {
+    color: #E15544;
+    font-size: 46px;
+    padding-top: 10px;
+    font-family: "Roboto Mono", monospace;
+    margin-left: 100px;
+}
+
+.me {
+    height: 620px;
+    position: relative;
+}
+
+.contact_me_tab {
+    position: absolute;
+    left: 100px;
+    top: 140px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: #E15544;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid #3DCFB6;
+    padding: 18px 12px;
+    font-family: "Roboto Mono", monospace;
+    letter-spacing: 4px;
+    font-size: 16px;
+}
+
+.scroll_arrow {
+    position: absolute;
+    left: 50%;
+    top: 280px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.scroll_arrow img {
+    width: 22px;
+    height: 50px;
+    display: block;
+}
+
+.me_txt {
+    color: #3DCFB6;
+    font-size: 40px;
+}
+
+.me_text_group {
+    position: absolute;
+    left: 90px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+    color: #3DCFB6;
+    font-size: 90px;
+}
+
+.felix_png {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    height: 554px;
+    width: 539px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+.why_me {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.why_me_content {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 50px;
+    padding-right: 104px;
+}
+
+.why_me_headlin {
+    color: #E15544;
+    font-family: "Roboto Mono", monospace;
+    font-size: 62px;
+    font-weight: 700;
+}
+
+.why_me_txt {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 20px;
+    max-width: 760px;
+    text-align: right;
+}
+
+.felix_png_about_me {
+    height: 420px;
+    width: 420px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.i_am_section {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+
+.i_am {
+    color: #E15544;
+    font-family: "Roboto Mono", monospace;
+    font-size: 78px;
+    font-weight: bold;
+    line-height: 1;
+    padding-top: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.i_am_items {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+        "location relocate"
+        "arrow-down arrow-up"
+        "remote arrow-end";
+    column-gap: 40px;
+    row-gap: 8px;
+    align-items: start;
+}
+
+.i_am_location {
+    grid-area: location;
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.i_am_location img {
+    height: 46px;
+    width: auto;
+}
+
+.i_am_relocate {
+    grid-area: relocate;
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 110px 0 0 0;
+}
+
+.i_am_relocate img {
+    height: 46px;
+    width: auto;
+}
+
+.i_am_arrow_down {
+    grid-area: arrow-down;
+}
+
+.i_am_arrow_down img {
+    height: 90px;
+    width: auto;
+    padding: 0 20px 5px 20px;
+}
+
+.i_am_arrow_up {
+    grid-area: arrow-up;
+}
+
+.i_am_arrow_up img {
+    height: 90px;
+    width: auto;
+    padding-left: 150px;
+}
+
+.i_am_remote {
+    grid-area: remote;
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.i_am_remote img {
+    height: 46px;
+    width: auto;
+    padding: 0 0 0 80px;
+}
+
+.i_am_arrow_end {
+    grid-area: arrow-end;
+}
+
+.i_am_arrow_end img {
+    height: 90px;
+    width: auto;
+
+}
+
+.let_us_talk_btn {
+    height: 64px;
+    width: 175px;
+    margin-right: -60px;
+    margin-top: -50px;
+    background-color: #00F4BF;
+    border: none;
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.let_us_talk_btn:hover {
+    color: #E15544;
+}
+
+.headline_myProjects {
+    color: #E15544;
+    font-size: 46px;
+    padding-top: 10px;
+    font-family: "Roboto Mono", monospace;
+    display: flex;
+    justify-content: center;
+}
+
+.Pollo_Loco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.Pollo_Loco_img {
+    width: 650px;
+    height: 410px;
+}
+
+.headline_elPolloLoco {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 46px;
+}
+
+.Project_Languages {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 17px;
+    padding: 10px 0 0 0px;
+}
+
+.Project_Description {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 17px;
+    padding: 10px 0 0 0px;
+}
+
+.Github_Button {
+    height: 56px;
+    width: 135px;
+    margin-top: 50px;
+    background-color: transparent;
+    color: #E15544;
+    font-size: 20px;
+    border-color: white;
+}
+
+.LiveTest_Button {
+    height: 56px;
+    width: 170px;
+    background-color: #00F4BF;
+    color: black;
+    font-size: 20px;
+    border: none;
+    margin-left: 20px;
+}
+
+.Join_img {
+    width: 650px;
+    height: 410px;
+}
+
+.testimonials {
+    margin-bottom: 150px;
+}
+
+.headline_testimonials {
+    color: #E15544;
+    font-family: "Roboto Mono", monospace;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.testimonials_row {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.testimonials_arrow {
+    width: 90px;
+    height: auto;
+    align-self: start;
+}
+
+.testimonial_name {
+    color: #E15544;
+    font-family: "Roboto Mono", monospace;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.testimonial_project {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    padding-top: 6px;
+}
+
+.testimonial_text {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+
+}
+
+
+
+.headline_contact {
+    color: #E15544;
+    font-size: 46px;
+    font-family: "Roboto Mono", monospace;
+}
+
+.contact_arrow {
+    height: 38px;
+    width: auto;
+    margin-left: 24px;
+    vertical-align: middle;
+}
+
+.contact_information {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact_left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 540px;
+}
+
+.contact_right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact_interest {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.contact_detail_row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.email {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 17px;
+}
+
+.contact_detail_row img {
+    height: 24px;
+    width: auto;
+}
+
+.contact_input_yourMessage {
+    background-color: transparent;
+    border: 1px solid #00F4BF;
+    color: #02F4BF;
+    width: 100%;
+    height: 155px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: "Roboto Mono", monospace;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.contact_input_name {
+    background-color: transparent;
+    border: 1px solid #00F4BF;
+    color: #02F4BF;
+    width: 100%;
+    height: 60px;
+    padding: 0 16px;
+    font-size: 16px;
+    font-family: "Roboto Mono", monospace;
+    box-sizing: border-box;
+}
+
+.contact_input_name::placeholder,
+.contact_input_yourMessage::placeholder {
+    color: #3DCFB6;
+    opacity: 0.7;
+}
+
+.checkbox__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.checkbox {
+    accent-color: #E15544;
+    background-color: transparent;
+    margin-top: 3px;
+}
+
+.lable_privacy_policy {
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+}
+
+.contact_Send_btn {
+    width: 112px;
+    height: 56px;
+    align-self: flex-end;
+    background-color: transparent;
+    color: #b8b8b8;
+    border: 1px solid #b8b8b8;
+    font-size: 18px;
+    font-family: "Roboto Mono", monospace;
+    cursor: pointer;
+}
+
+.arrow_up {
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+.arrow_up img {
+    height: 60px;
+    width: auto;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0px;
+    font-family: "Roboto Mono", monospace;
+}
+
+.footer_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer_logo_subtitle {
+    color: #E15544;
+    font-size: 12px;
+}
+
+.footer_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer_copyright {
+    color: #E15544;
+    font-size: 22px;
+}
+
+.social_links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social_links_btn {
+    height: 34px;
+    width: 34px;
+}
+
+.social_links_btn img {
+    height: 34px;
+    width: 34px;
+}
+
+.legal_information {
+    display: flex;
+    gap: 40px;
+}
+
+.legal_information_link {
+    text-decoration: none;
+    color: #E15544;
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+}
+
+@media (min-width: 1440px) {
+    .me {
+        height: 90vh;
+        min-height: 750px;
+    }
+
+    .me_text_group {
+        bottom: auto;
+        top: 80px;
+        left: 100px;
+    }
+
+    .contact_me_tab {
+        writing-mode: horizontal-tb;
+        left: 42%;
+        top: 340px;
+        transform: translateX(-50%);
+        padding: 10px 18px;
+    }
+
+    .scroll_arrow {
+        left: 42%;
+        top: 420px;
+        transform: translateX(-50%);
+    }
+
+    .felix_png {
+        right: 120px;
+        height: 62vh;
+        width: auto;
+        aspect-ratio: 539 / 554;
+    }
+}
+
+@media (max-width: 1439px) {
+    header {
+        margin-top: 20px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        font-family: "Roboto Mono", monospace;
+        position: relative;
+    }
+
+    .link {
+        color: #E15544;
+        text-decoration: none;
+        font-size: 22px;
+
+    }
+
+    .logo {
+        color: #E15544;
+        font-size: 34px;
+        display: flex;
+        font-family: "Press Start 2P", monospace;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 50px;
+        margin-left: 60px;
+    }
+
+    .lang-btn {
+        color: #E15544;
+        border-radius: 6px;
+        padding: 4px 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+        margin-left: auto;
+        margin-right: 100px;
+        font-family: "Roboto Mono", monospace;
+        font-size: 18px;
+    }
+
+    .felix_png {
+        position: absolute;
+        right: 200px;
+        bottom: 40px;
+        height: 520px;
+        width: 460px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    h1 {
+        color: #3DCFB6;
+        font-size: 70px;
+    }
+
+    .me_txt {
+        color: #3DCFB6;
+        font-size: 30px;
+    }
+
+    .contact_me_tab {
+        letter-spacing: 2px;
+        font-size: 12px;
+    }
+
+    .scroll_arrow img {
+        width: 22px;
+        height: 50px;
+        display: block;
+    }
+
+    .why_me_txt {
+        color: #3DCFB6;
+        font-family: "Roboto Mono", monospace;
+        font-size: 18px;
+        line-height: 1.4;
+        margin-top: 20px;
+        max-width: 760px;
+        text-align: right;
+        padding-right: 165px;
+    }
+
+    .felix_png_about_me {
+        height: 360px;
+        width: 349px;
+
+    }
+
+    .why_me_headlin {
+        color: #E15544;
+        font-family: "Roboto Mono", monospace;
+        font-size: 50px;
+        font-weight: 700;
+        margin-right: 160px;
+    }
+
+    .i_am {
+        color: #E15544;
+        font-family: "Roboto Mono", monospace;
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 1;
+        padding-top: 10px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .i_am_remote img,
+    .i_am_relocate img,
+    .i_am_location img {
+        height: 35px;
+        width: auto;
+    }
+
+    .i_am_location {
+        grid-area: location;
+        color: #3DCFB6;
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .i_am_relocate {
+        grid-area: relocate;
+        color: #3DCFB6;
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 101px 169px 0 0;
+    }
+
+    .i_am_remote {
+        grid-area: remote;
+        color: #3DCFB6;
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-right: 20px;
+    }
+
+    .i_am_arrow_down img {
+        height: 70px;
+        width: auto;
+
+    }
+
+    .i_am_arrow_up img {
+        height: 70px;
+        width: auto;
+        padding-left: 120px;
+    }
+
+    .i_am_arrow_end img {
+        height: 60px;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    .let_us_talk_btn {
+        height: 46px;
+        width: 131px;
+        margin-right: -60px;
+        margin-top: -48px;
+        background-color: #00F4BF;
+        border: none;
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+
+    .let_us_talk_btn {
+        height: 46px;
+        width: 131px;
+        margin-right: 95px;
+        margin-top: -26px;
+        background-color: #00F4BF;
+        border: none;
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+
+    .i_am_items {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-areas: "location relocate" "arrow-down arrow-up" "remote arrow-end";
+        column-gap: 4px;
+        row-gap: 0px;
+        align-items: start;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(6, min-content);
+        justify-content: center;
+        gap: 38px;
+        padding-top: 40px;
+    }
+
+    .Join_img,
+    .Pollo_Loco_img {
+        width: 580px;
+        height: 370px;
+    }
+
+    .headline_elPolloLoco {
+        color: #3DCFB6;
+        font-family: "Roboto Mono", monospace;
+        font-size: 37px;
+    }
+
+    .Project_Languages {
+        color: #3DCFB6;
+        font-family: "Roboto Mono", monospace;
+        font-size: 15px;
+        padding: 10px 0 0 0px;
+    }
+
+    .Project_Description {
+        color: #3DCFB6;
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+        padding: 10px 0 0 0px;
+    }
+
+    .Github_Button {
+        height: 44px;
+        width: 100px;
+        margin-top: 50px;
+        background-color: transparent;
+        color: #E15544;
+        font-size: 14px;
+        border-color: white;
+    }
+
+    .LiveTest_Button {
+        height: 44px;
+        width: 100px;
+        background-color: #00F4BF;
+        color: black;
+        font-size: 14px;
+        border: none;
+        margin-left: 20px;
+    }
+
+    .headline_testimonials {
+        font-size: 29px;
+
+    }
+
+    .testimonials_arrow {
+        width: 60px;
+    }
+
+    .testimonial_name {
+        font-size: 25px;
+    }
+
+    .testimonial_project {
+        font-size: 16px;
+    }
+
+    .testimonial_text {
+        font-size: 15px;
+    }
+
+    .testimonials_row {
+        margin-right: 95px;
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 1360px) {
+    .felix_png_about_me {
+        width: clamp(240px, 27vw, 349px);
+        height: auto;
+        aspect-ratio: 349 / 360;
+    }
+
+    .why_me {
+        gap: 40px;
+    }
+
+    .why_me_content {
+        padding-right: 40px;
+    }
+
+    .why_me_headlin {
+        margin-right: 0;
+        font-size: 44px;
+    }
+
+    .why_me_txt {
+        padding-right: 0;
+        max-width: 560px;
+    }
+
+    .i_am {
+        font-size: 40px;
+    }
+
+    .i_am_section {
+        gap: 30px;
+        padding-left: 0;
+    }
+
+    .i_am_relocate {
+        padding: 80px 0 0 0;
+    }
+
+    .i_am_arrow_up img {
+        padding-left: 60px;
+    }
+
+    .i_am_remote img {
+        padding: 0 0 0 40px;
+    }
+
+    .let_us_talk_btn {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    header {
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .link {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .nav-links {
+        gap: 24px;
+        margin-left: 30px;
+    }
+
+    .lang-btn {
+        margin-right: 0;
+    }
+
+    .me_text_group {
+        left: 40px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .me_txt {
+        font-size: 24px;
+    }
+
+    .felix_png {
+        right: 40px;
+        width: clamp(280px, 40vw, 440px);
+        height: auto;
+        aspect-ratio: 460 / 520;
+    }
+
+    .Pollo_Loco {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 30px;
+        align-items: center;
+    }
+
+    .Join_img,
+    .Pollo_Loco_img {
+        width: 100%;
+        max-width: 580px;
+        height: auto;
+        aspect-ratio: 580 / 370;
+        object-fit: cover;
+    }
+
+    .Project_Description br {
+        display: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .why_me {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .why_me_content {
+        max-width: 100%;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .why_me_txt {
+        text-align: center;
+    }
+
+    .let_us_talk_btn {
+        margin-top: 10px;
+        margin-right: 0;
+    }
+}
+
+.burger_btn {
+    display: none;
+    flex-direction: column;
+    gap: 7px;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.burger_btn span {
+    display: block;
+    width: 34px;
+    height: 3px;
+    background-color: #E15544;
+}
+
+.mobile_menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: linear-gradient(to bottom, #0B042D, #241085);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile_menu.open {
+    display: flex;
+}
+
+.mobile_menu_close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: #E15544;
+    font-size: 52px;
+    font-weight: 100;
+    line-height: 1;
+    font-family: "Roboto Mono", monospace;
+    cursor: pointer;
+}
+
+.mobile_nav_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    font-family: "Roboto Mono", monospace;
+}
+
+.mobile_link {
+    color: #E15544;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.mobile_lang {
+    margin: 0;
+    font-size: 22px;
+}
+
+@media (min-width: 769px) {
+    .mobile_menu.open {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 0 20px;
+    }
+
+    header {
+        width: 100%;
+        height: 64px;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .nav-links,
+    header .lang-btn {
+        display: none;
+    }
+
+    .burger_btn {
+        display: flex;
+    }
+
+    .me {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .contact_me_tab,
+    .scroll_arrow {
+        display: none;
+    }
+
+    .felix_png {
+        order: -1;
+        position: static;
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+    }
+
+    .me_text_group {
+        position: static;
+        align-items: center;
+        text-align: center;
+        margin-top: 28px;
+    }
+
+    .me_txt {
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .why_me {
+        margin-top: 70px;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .felix_png_about_me {
+        display: none;
+    }
+
+    .why_me_content {
+        max-width: 100%;
+        align-items: center;
+        padding: 0;
+    }
+
+    .why_me_headlin {
+        margin: 0;
+        font-size: 34px;
+    }
+
+    .why_me_txt {
+        font-size: 15px;
+        text-align: center;
+        padding: 0;
+        margin-top: 16px;
+    }
+
+    .i_am_section {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding: 115px 0 0 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .i_am {
+        font-size: 30px;
+        padding: 0;
+    }
+
+    .i_am_items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .i_am_items br {
+        display: none;
+    }
+
+    .i_am_arrow_up {
+        display: none;
+    }
+
+    .i_am_arrow_down {
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+
+    .i_am_arrow_down img {
+        height: 75px;
+        padding: 0;
+    }
+
+    .i_am_location,
+    .i_am_relocate,
+    .i_am_remote {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .i_am_remote img {
+        padding: 0;
+    }
+
+    .i_am_arrow_end {
+        position: absolute;
+        right: 8%;
+        bottom: -95px;
+    }
+
+    .i_am_arrow_end img {
+        height: 65px;
+        transform: scaleY(-1);
+    }
+
+    .let_us_talk_btn {
+        margin: 125px 0 0 0;
+        height: 54px;
+        width: 160px;
+        font-size: 16px;
+    }
+
+    .skills-section {
+        height: auto;
+        padding: 40px 0 20px 0;
+    }
+
+    .headline_skills {
+        margin-left: 0;
+        text-align: center;
+        font-size: 34px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, min-content);
+        gap: 30px;
+        padding-top: 32px;
+    }
+
+    .skill-item img {
+        width: 76px;
+        height: 76px;
+    }
+
+    .headline_myProjects {
+        font-size: 34px;
+        padding-top: 40px;
+    }
+
+    .Pollo_Loco {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 80px;
+    }
+
+    .Pollo_Loco>div,
+    .Join_Info {
+        display: contents;
+    }
+
+    .headline_elPolloLoco {
+        order: 1;
+        font-size: 30px;
+    }
+
+    .Project_Languages {
+        order: 2;
+        font-size: 15px;
+    }
+
+    .Project_Description {
+        order: 3;
+        font-size: 14px;
+    }
+
+    .Project_Description br {
+        display: none;
+    }
+
+    .Pollo_Loco_img,
+    .Join_img {
+        order: 4;
+        width: 100%;
+        height: auto;
+        margin-top: 24px;
+    }
+
+    .project_buttons {
+        order: 5;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 28px;
+    }
+
+    .Github_Button {
+        margin-top: 0;
+    }
+
+    .LiveTest_Button {
+        margin-left: 0;
+    }
+
+    .testimonials {
+        margin-bottom: 100px;
+    }
+
+    .headline_testimonials {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .testimonials_row {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        margin-top: 40px;
+        padding-bottom: 16px;
+    }
+
+    .testimonials_arrow {
+        display: none;
+    }
+
+    .testimonial {
+        flex: 0 0 auto;
+        width: 260px;
+        border: 1px solid #E15544;
+        border-radius: 4px;
+        padding: 20px 16px;
+        text-align: center;
+    }
+
+    .testimonial_name {
+        font-size: 22px;
+    }
+
+    .testimonial_project {
+        font-size: 16px;
+    }
+
+    .testimonial_text {
+        font-size: 15px;
+        padding-top: 12px;
+    }
+
+    .headline_contact {
+        display: block;
+        text-align: center;
+        font-size: 34px;
+    }
+
+    .contact_arrow {
+        display: none;
+    }
+
+    .contact_information {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 24px;
+    }
+
+    .contact_left,
+    .contact_right {
+        display: contents;
+    }
+
+    .contact_interest {
+        order: 1;
+        text-align: center;
+    }
+
+    .contact_input_name {
+        order: 2;
+    }
+
+    .contact_input_yourMessage {
+        order: 3;
+    }
+
+    .checkbox__row {
+        order: 4;
+        justify-content: center;
+    }
+
+    .contact_Send_btn {
+        order: 5;
+        align-self: center;
+    }
+
+    .arrow_up {
+        order: 6;
+        align-self: flex-end;
+        margin-left: 0;
+    }
+
+    .contact_detail_row {
+        order: 7;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 36px;
+        padding: 20px 0 50px 0;
+    }
+
+    .social_links {
+        order: 1;
+    }
+
+    .footer_logo {
+        order: 2;
+    }
+
+    .footer_center {
+        order: 3;
+    }
+
+    .footer_copyright {
+        font-size: 18px;
+    }
+
+    .legal_information {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}

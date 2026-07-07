@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felix Pfeifer</title>
+    <link rel="icon" type="image/x-icon" href="./images/Favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="page-container">
+    <header>
+        <div class="logo">
+            <span class="logo-bracket">&lt;</span>FP<span class="logo-bracket">&gt;</span>
+        </div>
+        <nav class="nav-links">
+            <a class="link" href="#why-me" data-i18n="nav.whyme">Warum ich</a>
+            <a class="link" href="#skills" data-i18n="nav.skills">Skills</a>
+            <a class="link" href="#projects" data-i18n="nav.projects">Projekte</a>
+            <a class="link" href="#contact" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <div class="lang-btn" id="langToggle">
+            <span class="lang-opt lang-active" data-lang="de" onclick="window.setLang('de')">DE</span>
+            <span class="lang-sep">|</span>
+            <span class="lang-opt" data-lang="en" onclick="window.setLang('en')">EN</span>
+        </div>
+        <button class="burger_btn" id="burgerBtn" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="mobile_menu" id="mobileMenu">
+        <button class="mobile_menu_close" id="mobileMenuClose" aria-label="Menü schließen">&times;</button>
+        <nav class="mobile_nav_links">
+            <a class="mobile_link" href="#why-me" data-i18n="nav.whyme">Warum ich</a>
+            <a class="mobile_link" href="#skills" data-i18n="nav.skills">Skills</a>
+            <a class="mobile_link" href="#projects" data-i18n="nav.projects">Projekte</a>
+            <a class="mobile_link" href="#contact" data-i18n="nav.contact">Kontakt</a>
+            <div class="lang-btn mobile_lang">
+                <span class="lang-opt lang-active" data-lang="de" onclick="window.setLang('de')">DE</span>
+                <span class="lang-sep">|</span>
+                <span class="lang-opt" data-lang="en" onclick="window.setLang('en')">EN</span>
+            </div>
+        </nav>
+    </div>
+
+    <div class="me">
+        <a class="contact_me_tab" href="#contact" data-i18n="hero.contactTab">Contact me</a>
+        <a class="scroll_arrow" href="#why-me"><img src="./images/Arrow down.png" alt="Scroll down" /></a>
+        <div class="me_text_group">
+            <span class="me_txt">Frontend Developer</span>
+            <h1>Felix Pfeifer</h1>
+        </div>
+        <img class="felix_png" src="./images/Felix1.png" alt="" />
+    </div>
+
+    <div class="why_me" id="why-me">
+        <img class="felix_png_about_me" src="./images/Felix.jpeg" alt="" />
+        <div class="why_me_content">
+            <span class="why_me_headlin" data-i18n="whyme.headline">Why me?</span>
+            <span class="why_me_txt" data-i18n="whyme.text">I am passionate about coding and enjoy solving complex IT problems. I continuously learn new technologies to improve my skills and grow professionally. My motivation comes from creating efficient solutions and developing innovative software.</span>
+            <div class="i_am_section">
+                <span class="i_am" data-i18n="whyme.iam">I am</span>
+                <div class="i_am_items">
+                    <span class="i_am_location">
+                        <img src="./images/Vector.png" alt="" />
+                        <span data-i18n-html="whyme.location">located <br />
+                            in St.Anna am Aigen</span>
+                    </span>
+                    <span class="i_am_relocate">
+                        <img src="./images/relocate.png" alt="" />
+                        <span data-i18n-html="whyme.relocate">open <br />
+                            to relocate</span>
+                    </span>
+                    <span class="i_am_arrow_down"><img src="./images/Arrow 5.png" alt="" /></span>
+                    <span class="i_am_arrow_up"><img src="./images/Arrow 01.png" alt="" /></span>
+                    <span class="i_am_remote">
+                        <img src="./images/Icon Remote.png" alt="" />
+                        <span data-i18n-html="whyme.remote">open to <br />
+                            work remote</span>
+                    </span>
+                    <span class="i_am_arrow_end"><img src="./images/Arrow 4.png" alt="" /></span>
+                </div>
+            </div>
+            <a href="#contact"><button class="let_us_talk_btn" data-i18n="whyme.talkBtn">Let's Talk</button></a>
+        </div>
+    </div>
+
+    <section class="skills-section" id="skills">
+        <h2 class="headline_skills" data-i18n="skills.headline">My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <img src="./images/Angular.png" alt="Angular" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/Typescript.png" alt="Typescript" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/JS.png" alt="JavaScript" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/Html.png" alt="HTML" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/Css.png" alt="CSS" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/Rest_API.png" alt="Rest-API" />
+            </div>
+
+            <div class="skill-item">
+                <img src="./images/Supabase.png" alt="Supabase" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/Git.png" alt="Git" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/Scrum.png" alt="Scrum" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/Material design.png" alt="Material Design" />
+            </div>
+            <div class="skill-item">
+                <img src="./images/Chalange_me.png" alt="Chalange-me" />
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section" id="projects">
+        <h2 class="headline_myProjects" data-i18n="projects.headline">My Projects</h2>
+        <div class="Pollo_Loco">
+            <img class="Pollo_Loco_img" src="images/startscreen_1.png" alt="" />
+            <div>
+                <p class="headline_elPolloLoco">EL Pollo Loco</p>
+                <p class="Project_Languages">JavaScript | HTML | CSS</p>
+                <p class="Project_Description" data-i18n-html="projects.pollo.desc">Jump, run and throw game based on object-oriented approach.<br>
+                    Help Pepe to find coins and tabasco salsa to fight against <br> the crazy hen.</p>
+                <div class="project_buttons">
+                    <a href="https://github.com/PfeiferFelix/El-Pollo-Loco" target="_blank"><Button class="Github_Button">GitHub</Button></a>
+                    <Button class="LiveTest_Button">Live Test</Button>
+                </div>
+            </div>
+        </div>
+
+        <div class="Pollo_Loco">
+            <div class="Join_Info">
+                <p class="headline_elPolloLoco">Join</p>
+                <p class="Project_Languages">JavaScript | HTML | CSS | Firebase</p>
+                <p class="Project_Description" data-i18n-html="projects.join.desc">Team-based Kanban task manager for creating, organizing,<br>
+                    and assigning tasks. Prioritize workflows, track progress, <br> and collaborate efficiently with your team.</p>
+                <div class="project_buttons">
+                    <a href="https://github.com/PfeiferFelix/Join" target="_blank"><Button class="Github_Button">GitHub</Button></a>
+                    <Button class="LiveTest_Button">Live Test</Button>
+                </div>
+            </div>
+            <img class="Join_img" src="images/join.png" alt="" />
+        </div>
+        <div class="Pollo_Loco">
+            <img class="Pollo_Loco_img" src="images/Poke_API.png" alt="" />
+            <div>
+                <p class="headline_elPolloLoco">Poke API</p>
+                <p class="Project_Languages">JavaScript | HTML | CSS | REST API</p>
+                <p class="Project_Description" data-i18n-html="projects.poke.desc">Interactive Pokédex that fetches data from the PokéAPI.<br>
+                    Search, filter, and explore Pokémon, including their <br> stats, abilities, and attacks.</p>
+                <div class="project_buttons">
+                    <a href="https://github.com/PfeiferFelix/PokeApi" target="_blank"><Button class="Github_Button">GitHub</Button></a>
+                    <Button class="LiveTest_Button">Live Test</Button>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h3 class="headline_testimonials" data-i18n="testimonials.headline">Need a teamplayer? Here&rsquo;s what my colleagues say about me</h3>
+            <div class="testimonials_row">
+                <img class="testimonials_arrow" src="./images/Arrow_feedback.png" alt="" />
+                <div class="testimonial">
+                    <p class="testimonial_name">Noah Mueller</p>
+                    <p class="testimonial_project" data-i18n="testimonials.1.project">Project Sharkie</p>
+                    <p class="testimonial_text" data-i18n="testimonials.1.text">&rsquo;&rsquo;Felix had to develop, format and deliver content in collaboration with the team members. He is a reliable and friendly person.&rsquo;&rsquo;</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial_name">Evelyn Marx</p>
+                    <p class="testimonial_project" data-i18n="testimonials.2.project">Project Pollo Loco</p>
+                    <p class="testimonial_text" data-i18n="testimonials.2.text">&rsquo;&rsquo; He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code. &rsquo;&rsquo;</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial_name">James Rugman</p>
+                    <p class="testimonial_project" data-i18n="testimonials.3.project">Project Join</p>
+                    <p class="testimonial_text" data-i18n="testimonials.3.text">&rsquo;&rsquo; He is a reliable and friendly person. Work in a structured way and write a clear code. I recommend him as a colleague.&rsquo;&rsquo;</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <span class="headline_contact" id="contact"><span data-i18n="contact.headline">Contact me</span>
+        <img class="contact_arrow" src="./images/Arrow.png" alt="">
+    </span>
+    <div class="contact_information">
+        <div class="contact_left">
+            <span class="contact_interest" data-i18n="contact.intro">Encourage people to contact you and describe what role you are
+                interested in. Express interest in contributing to a new project.</span>
+            <input class="contact_input_name" type="text" name="name" id="contactName" placeholder="Your Name" data-i18n-placeholder="contact.name.placeholder">
+            <input class="contact_input_name" type="email" name="email" id="contactEmail" placeholder="Your Email" data-i18n-placeholder="contact.email.placeholder">
+            <div class="checkbox__row">
+                <input class="checkbox" type="checkbox" id="privacy" />
+                <label class="lable_privacy_policy" for="privacy" data-i18n-html="contact.privacy">I've read the <a class="legal_information_link"
+                        href="privacy-policy.html">privacy policy</a> and agree to the processing of my data as
+                    outlined.</label>
+            </div>
+        </div>
+        <div class="contact_right">
+            <div class="contact_detail_row">
+                <img src="./images/icon _email_.png" alt="">
+                <span class="email" data-i18n="contact.emailLabel">E-mail: felix@pr-media.at</span>
+            </div>
+            <div class="contact_detail_row">
+                <img src="./images/icon _phone_.png" alt="">
+                <span class="email">Tel: +43 664 651 7007</span>
+            </div>
+            <textarea class="contact_input_yourMessage" name="message" id="contactMessage" placeholder="Your Message" data-i18n-placeholder="contact.message.placeholder"></textarea>
+            <button class="contact_Send_btn" id="contactSendBtn" data-i18n="contact.send">Send</button>
+        </div>
+        <a class="arrow_up" href="#"><img src="./images/Arrow Up.png" alt="Back to top"></a>
+    </div>
+
+
+    <footer>
+        <div class="footer_logo">
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>FP<span class="logo-bracket">&gt;</span>
+            </div>
+            <span class="footer_logo_subtitle">frontend developer</span>
+        </div>
+
+        <div class="footer_center">
+            <span class="footer_copyright">&copy; Felix Pfeifer 2026</span>
+            <div class="legal_information">
+                <a class="legal_information_link" href="./legal-notice.html" data-i18n="footer.legal">Legal notice</a>
+                <a class="legal_information_link" href="./privacy-policy.html" data-i18n="footer.privacy">privacy policy</a>
+            </div>
+        </div>
+
+        <div class="social_links">
+            <a class="social_links_btn" href="https://github.com/PfeiferFelix" target="_blank"><img src="./images/Github button.png" alt="GitHub" /></a>
+            <a class="social_links_btn" href="mailto:felix@pr-media.at"><img src="./images/Email button.png" alt="E-Mail" /></a>
+            <a class="social_links_btn" href="https://www.linkedin.com/feed/" target="_blank"><img src="./images/Linkedin button.png" alt="LinkedIn" /></a>
+        </div>
+    </footer>
+    </div>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

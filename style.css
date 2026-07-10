@@ -66,6 +66,7 @@ header::before {
     font-size: 34px;
     display: flex;
     font-family: "Press Start 2P", monospace;
+    text-decoration: none;
 }
 
 .nav-links {
@@ -76,12 +77,9 @@ header::before {
 
 .lang-btn {
     color: #E15544;
-    border-radius: 6px;
-    padding: 4px 10px;
-    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     flex-shrink: 0;
     margin-left: auto;
     margin-right: 100px;
@@ -91,6 +89,24 @@ header::before {
 
 .lang-opt {
     cursor: pointer;
+    background: transparent;
+    border: 1px solid #E15544;
+    color: #E15544;
+    border-radius: 6px;
+    padding: 3px 11px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-opt:hover {
+    background: rgba(225, 85, 68, 0.12);
+}
+
+.lang-opt.lang-active {
+    background: #E15544;
+    color: #fff;
 }
 
 .skills-section {
@@ -744,12 +760,9 @@ footer {
 
     .lang-btn {
         color: #E15544;
-        border-radius: 6px;
-        padding: 4px 10px;
-        cursor: pointer;
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
         flex-shrink: 0;
         margin-left: auto;
         margin-right: 100px;
@@ -1644,6 +1657,18 @@ footer {
         gap: 10px;
     }
 }
+/* Legal / privacy pages have little content – keep the footer pinned to the
+   bottom on very large screens instead of floating in the middle of the page. */
+.page-container:has(.legal_page) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-container:has(.legal_page) footer {
+    margin-top: auto;
+}
+
 .legal_page {
     max-width: 1000px;
     margin: 0 auto;

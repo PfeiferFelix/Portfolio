@@ -89,6 +89,10 @@ header::before {
     font-size: 18px;
 }
 
+.lang-opt {
+    cursor: pointer;
+}
+
 .skills-section {
     height: 460px;
 
@@ -96,16 +100,31 @@ header::before {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(6, min-content);
+    grid-template-columns: repeat(6, 112px);
     justify-content: center;
-    gap: 50px;
+    gap: 48px;
     padding-top: 40px;
 }
 
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
 .skill-item img {
-    width: 92px;
-    height: 92px;
+    width: 68px;
+    height: 68px;
     object-fit: contain;
+}
+
+.skill-label {
+    color: #3DCFB6;
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.2;
 }
 
 .headline_skills {
@@ -117,7 +136,7 @@ header::before {
 }
 
 .me {
-    height: 620px;
+    min-height: calc(100vh - 112px);
     position: relative;
 }
 
@@ -184,8 +203,9 @@ h1 {
 .why_me {
     margin-top: 100px;
     width: 100%;
+    min-height: calc(100vh - 112px);
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: space-between;
     gap: 60px;
 }
@@ -197,6 +217,10 @@ h1 {
     align-items: flex-end;
     padding-top: 50px;
     padding-right: 104px;
+}
+
+.why_me_content > a {
+    margin-top: 0;
 }
 
 .why_me_headlin {
@@ -221,6 +245,7 @@ h1 {
     width: 420px;
     object-fit: cover;
     border-radius: 5px;
+    align-self: flex-start;
 }
 
 .i_am_section {
@@ -360,13 +385,18 @@ h1 {
 .Pollo_Loco {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    align-items: center;
     margin-top: 100px;
     margin-bottom: 200px;
 }
 
 .Pollo_Loco_img {
-    width: 650px;
-    height: 410px;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    aspect-ratio: 650 / 410;
+    object-fit: cover;
 }
 
 .headline_elPolloLoco {
@@ -410,8 +440,11 @@ h1 {
 }
 
 .Join_img {
-    width: 650px;
-    height: 410px;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    aspect-ratio: 650 / 410;
+    object-fit: cover;
 }
 
 .testimonials {
@@ -564,7 +597,7 @@ h1 {
 .lable_privacy_policy {
     color: white;
     font-family: "Roboto Mono", monospace;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .contact_Send_btn {
@@ -607,7 +640,7 @@ footer {
 
 .footer_logo_subtitle {
     color: #E15544;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .footer_center {
@@ -647,12 +680,12 @@ footer {
     text-decoration: none;
     color: #E15544;
     font-family: "Roboto Mono", monospace;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 @media (min-width: 1440px) {
     .me {
-        height: 90vh;
+        height: calc(100vh - 112px);
         min-height: 750px;
     }
 
@@ -746,7 +779,7 @@ footer {
 
     .contact_me_tab {
         letter-spacing: 2px;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .scroll_arrow img {
@@ -846,6 +879,7 @@ footer {
         height: 60px;
         width: auto;
         margin-bottom: 30px;
+                margin: -16px;
     }
 
     .let_us_talk_btn {
@@ -856,7 +890,7 @@ footer {
         background-color: #00F4BF;
         border: none;
         font-family: "Roboto Mono", monospace;
-        font-size: 14px;
+        font-size: 16px;
         cursor: pointer;
         transition-duration: 0.4s;
     }
@@ -869,7 +903,7 @@ footer {
         background-color: #00F4BF;
         border: none;
         font-family: "Roboto Mono", monospace;
-        font-size: 14px;
+        font-size: 16px;
         cursor: pointer;
         transition-duration: 0.4s;
     }
@@ -885,16 +919,15 @@ footer {
 
     .skills-grid {
         display: grid;
-        grid-template-columns: repeat(6, min-content);
+        grid-template-columns: repeat(6, 104px);
         justify-content: center;
-        gap: 38px;
+        gap: 32px;
         padding-top: 40px;
     }
 
     .Join_img,
     .Pollo_Loco_img {
-        width: 580px;
-        height: 370px;
+        max-width: 580px;
     }
 
     .headline_elPolloLoco {
@@ -906,33 +939,33 @@ footer {
     .Project_Languages {
         color: #3DCFB6;
         font-family: "Roboto Mono", monospace;
-        font-size: 15px;
+        font-size: 16px;
         padding: 10px 0 0 0px;
     }
 
     .Project_Description {
         color: #3DCFB6;
         font-family: "Roboto Mono", monospace;
-        font-size: 14px;
+        font-size: 16px;
         padding: 10px 0 0 0px;
     }
 
     .Github_Button {
         height: 44px;
-        width: 100px;
+        width: 110px;
         margin-top: 50px;
         background-color: transparent;
         color: #E15544;
-        font-size: 14px;
+        font-size: 16px;
         border-color: white;
     }
 
     .LiveTest_Button {
         height: 44px;
-        width: 100px;
+        width: 120px;
         background-color: #00F4BF;
         color: black;
-        font-size: 14px;
+        font-size: 16px;
         border: none;
         margin-left: 20px;
     }
@@ -955,7 +988,7 @@ footer {
     }
 
     .testimonial_text {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .testimonials_row {
@@ -974,6 +1007,7 @@ footer {
 
     .why_me {
         gap: 40px;
+        min-height: auto;
     }
 
     .why_me_content {
@@ -1004,7 +1038,7 @@ footer {
     }
 
     .i_am_arrow_up img {
-        padding-left: 60px;
+        padding-left: 137px;
     }
 
     .i_am_remote img {
@@ -1078,17 +1112,57 @@ footer {
     }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1100px) {
+    .me {
+        min-height: calc(100dvh - 112px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        padding-top: 10px;
+    }
+
+    .contact_me_tab,
+    .scroll_arrow {
+        display: none;
+    }
+
+    .felix_png {
+        order: -1;
+        position: static;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .me_text_group {
+        position: static;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
     .why_me {
         flex-direction: column;
         align-items: center;
         gap: 50px;
+        min-height: auto;
+    }
+
+    .felix_png_about_me {
+        display: none;
     }
 
     .why_me_content {
         max-width: 100%;
         align-items: center;
         padding-right: 0;
+    }
+
+    .why_me_content > a {
+        margin-top: 0;
     }
 
     .why_me_txt {
@@ -1098,6 +1172,7 @@ footer {
     .let_us_talk_btn {
         margin-top: 10px;
         margin-right: 0;
+        margin-left: 500px;
     }
 }
 
@@ -1202,10 +1277,11 @@ footer {
     }
 
     .me {
-        height: auto;
+        min-height: calc(100dvh - 74px);
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding-top: 10px;
     }
 
@@ -1253,6 +1329,7 @@ footer {
         max-width: 100%;
         align-items: center;
         padding: 0;
+        margin-bottom: 50px;
     }
 
     .why_me_headlin {
@@ -1261,7 +1338,7 @@ footer {
     }
 
     .why_me_txt {
-        font-size: 15px;
+        font-size: 16px;
         text-align: center;
         padding: 0;
         margin-top: 16px;
@@ -1271,7 +1348,7 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 28px;
-        padding: 115px 0 0 0;
+        padding: 70px 0 0 0;
         position: relative;
         width: 100%;
     }
@@ -1349,14 +1426,18 @@ footer {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(3, min-content);
-        gap: 30px;
+        grid-template-columns: repeat(3, 92px);
+        gap: 20px 16px;
         padding-top: 32px;
     }
 
     .skill-item img {
-        width: 76px;
-        height: 76px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .skill-label {
+        font-size: 16px;
     }
 
     .headline_myProjects {
@@ -1385,12 +1466,12 @@ footer {
 
     .Project_Languages {
         order: 2;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .Project_Description {
         order: 3;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .Project_Description br {
@@ -1461,7 +1542,7 @@ footer {
     }
 
     .testimonial_text {
-        font-size: 15px;
+        font-size: 16px;
         padding-top: 12px;
     }
 
@@ -1520,6 +1601,19 @@ footer {
         order: 7;
         flex-direction: column;
         gap: 10px;
+    }
+
+    #contactNameError,
+    #contactEmailError {
+        order: 2;
+    }
+
+    #contactMessageError {
+        order: 3;
+    }
+
+    #contactPrivacyError {
+        order: 4;
     }
 
     footer {
@@ -1617,4 +1711,14 @@ footer {
         width: 48px;
         height: auto;
     }
+}
+.error__text {
+    font-size: 12px;
+    color: #ff3d00;
+    padding-left: 4px;
+    font-family: "Roboto Mono", monospace;
+}
+
+.error__text:empty {
+    display: none;
 }

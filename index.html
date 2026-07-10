@@ -100,38 +100,49 @@
         <h2 class="headline_skills" data-i18n="skills.headline">My Skills</h2>
         <div class="skills-grid">
             <div class="skill-item">
-                <img src="./images/Angular.png" alt="Angular" />
+                <img src="./images/Angular_noName.png" alt="Angular" />
+                <span class="skill-label">Angular</span>
             </div>
             <div class="skill-item">
-                <img src="./images/Typescript.png" alt="Typescript" />
+                <img src="./images/Typescript_noName.png" alt="TypeScript" />
+                <span class="skill-label">TypeScript</span>
             </div>
             <div class="skill-item">
-                <img src="./images/JS.png" alt="JavaScript" />
+                <img src="./images/JS_noName.png" alt="JavaScript" />
+                <span class="skill-label">JavaScript</span>
             </div>
             <div class="skill-item">
-                <img src="./images/Html.png" alt="HTML" />
+                <img src="./images/Html_noName.png" alt="HTML" />
+                <span class="skill-label">HTML</span>
             </div>
             <div class="skill-item">
-                <img src="./images/Css.png" alt="CSS" />
+                <img src="./images/Css_noName.png" alt="CSS" />
+                <span class="skill-label">CSS</span>
             </div>
             <div class="skill-item">
-                <img src="./images/Rest_API.png" alt="Rest-API" />
+                <img src="./images/Api_noname.png" alt="REST-API" />
+                <span class="skill-label">REST-API</span>
             </div>
 
             <div class="skill-item">
-                <img src="./images/Supabase.png" alt="Supabase" />
+                <img src="./images/Supabase_noName.png" alt="Supabase" />
+                <span class="skill-label">Supabase</span>
             </div>
             <div class="skill-item">
-                <img src="./images/Git.png" alt="Git" />
+                <img src="./images/Git_noName.png" alt="Git" />
+                <span class="skill-label">Git</span>
             </div>
             <div class="skill-item">
-                <img src="./images/Scrum.png" alt="Scrum" />
+                <img src="./images/Scrum_noName.png" alt="Scrum" />
+                <span class="skill-label">Scrum</span>
             </div>
             <div class="skill-item">
-                <img src="./images/Material design.png" alt="Material Design" />
+                <img src="./images/Material_noName.png" alt="Material Design" />
+                <span class="skill-label">Material design</span>
             </div>
             <div class="skill-item">
-                <img src="./images/Chalange_me.png" alt="Chalange-me" />
+                <img src="./images/Chalangeme_noName.png" alt="Challenge me" />
+                <span class="skill-label">Challenge me</span>
             </div>
         </div>
     </section>
@@ -206,33 +217,37 @@
     <span class="headline_contact" id="contact"><span data-i18n="contact.headline">Contact me</span>
         <img class="contact_arrow" src="./images/Arrow.png" alt="">
     </span>
-    <div class="contact_information">
-        <div class="contact_left">
-            <span class="contact_interest" data-i18n="contact.intro">Encourage people to contact you and describe what role you are
-                interested in. Express interest in contributing to a new project.</span>
-            <input class="contact_input_name" type="text" name="name" id="contactName" placeholder="Your Name" data-i18n-placeholder="contact.name.placeholder">
-            <input class="contact_input_name" type="email" name="email" id="contactEmail" placeholder="Your Email" data-i18n-placeholder="contact.email.placeholder">
-            <div class="checkbox__row">
-                <input class="checkbox" type="checkbox" id="privacy" />
-                <label class="lable_privacy_policy" for="privacy" data-i18n-html="contact.privacy">I've read the <a class="legal_information_link"
-                        href="privacy-policy.html">privacy policy</a> and agree to the processing of my data as
-                    outlined.</label>
-            </div>
+  <div class="contact_information">
+    <div class="contact_left">
+        <span class="contact_interest" data-i18n="contact.intro">Encourage people to contact you and describe what role you are
+            interested in. Express interest in contributing to a new project.</span>
+        <input class="contact_input_name" type="text" name="name" id="contactName" placeholder="Your Name" data-i18n-placeholder="contact.name.placeholder">
+        <p class="error__text" id="contactNameError"></p>
+        <input class="contact_input_name" type="email" name="email" id="contactEmail" placeholder="Your Email" data-i18n-placeholder="contact.email.placeholder">
+        <p class="error__text" id="contactEmailError"></p>
+        <div class="checkbox__row">
+            <input class="checkbox" type="checkbox" id="privacy" />
+            <label class="lable_privacy_policy" for="privacy" data-i18n-html="contact.privacy">I've read the <a class="legal_information_link"
+                    href="privacy-policy.html">privacy policy</a> and agree to the processing of my data as
+                outlined.</label>
         </div>
-        <div class="contact_right">
-            <div class="contact_detail_row">
-                <img src="./images/icon _email_.png" alt="">
-                <span class="email" data-i18n="contact.emailLabel">E-mail: felix@pr-media.at</span>
-            </div>
-            <div class="contact_detail_row">
-                <img src="./images/icon _phone_.png" alt="">
-                <span class="email">Tel: +43 664 651 7007</span>
-            </div>
-            <textarea class="contact_input_yourMessage" name="message" id="contactMessage" placeholder="Your Message" data-i18n-placeholder="contact.message.placeholder"></textarea>
-            <button class="contact_Send_btn" id="contactSendBtn" data-i18n="contact.send">Send</button>
-        </div>
-        <a class="arrow_up" href="#"><img src="./images/Arrow Up.png" alt="Back to top"></a>
+        <p class="error__text" id="contactPrivacyError"></p>
     </div>
+    <div class="contact_right">
+        <div class="contact_detail_row">
+            <img src="./images/icon _email_.png" alt="">
+            <span class="email" data-i18n="contact.emailLabel">E-mail: felix@pr-media.at</span>
+        </div>
+        <div class="contact_detail_row">
+            <img src="./images/icon _phone_.png" alt="">
+            <span class="email">Tel: +43 664 651 7007</span>
+        </div>
+        <textarea class="contact_input_yourMessage" name="message" id="contactMessage" placeholder="Your Message" data-i18n-placeholder="contact.message.placeholder"></textarea>
+        <p class="error__text" id="contactMessageError"></p>
+        <button class="contact_Send_btn" id="contactSendBtn" data-i18n="contact.send">Send</button>
+    </div>
+    <a class="arrow_up" href="#"><img src="./images/Arrow Up.png" alt="Back to top"></a>
+</div>
 
 
     <footer>

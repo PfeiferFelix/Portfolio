@@ -219,17 +219,23 @@
     <div class="contact_left">
         <span class="contact_interest" data-i18n="contact.intro">Encourage people to contact you and describe what role you are
             interested in. Express interest in contributing to a new project.</span>
-        <input class="contact_input_name" type="text" name="name" id="contactName" placeholder="Your Name" data-i18n-placeholder="contact.name.placeholder">
-        <p class="error__text" id="contactNameError"></p>
-        <input class="contact_input_name" type="email" name="email" id="contactEmail" placeholder="Your Email" data-i18n-placeholder="contact.email.placeholder">
-        <p class="error__text" id="contactEmailError"></p>
-        <div class="checkbox__row">
-            <input class="checkbox" type="checkbox" id="privacy" />
-            <label class="lable_privacy_policy" for="privacy" data-i18n-html="contact.privacy">I've read the <a class="legal_information_link"
-                    href="privacy-policy.html">privacy policy</a> and agree to the processing of my data as
-                outlined.</label>
+        <div class="contact_field">
+            <input class="contact_input_name" type="text" name="name" id="contactName" placeholder="Your Name" data-i18n-placeholder="contact.name.placeholder">
+            <p class="error__text" id="contactNameError"></p>
         </div>
-        <p class="error__text" id="contactPrivacyError"></p>
+        <div class="contact_field">
+            <input class="contact_input_name" type="email" name="email" id="contactEmail" placeholder="Your Email" data-i18n-placeholder="contact.email.placeholder">
+            <p class="error__text" id="contactEmailError"></p>
+        </div>
+        <div class="contact_field">
+            <div class="checkbox__row">
+                <input class="checkbox" type="checkbox" id="privacy" />
+                <label class="lable_privacy_policy" for="privacy" data-i18n-html="contact.privacy">I've read the <a class="legal_information_link"
+                        href="privacy-policy.html">privacy policy</a> and agree to the processing of my data as
+                    outlined.</label>
+            </div>
+            <p class="error__text" id="contactPrivacyError"></p>
+        </div>
     </div>
     <div class="contact_right">
         <div class="contact_detail_row">
@@ -240,8 +246,10 @@
             <img src="./images/icon _phone_.png" alt="">
             <span class="email">Tel: +43 664 651 7007</span>
         </div>
-        <textarea class="contact_input_yourMessage" name="message" id="contactMessage" placeholder="Your Message" data-i18n-placeholder="contact.message.placeholder"></textarea>
-        <p class="error__text" id="contactMessageError"></p>
+        <div class="contact_field">
+            <textarea class="contact_input_yourMessage" name="message" id="contactMessage" placeholder="Your Message" data-i18n-placeholder="contact.message.placeholder"></textarea>
+            <p class="error__text" id="contactMessageError"></p>
+        </div>
         <button class="contact_Send_btn" id="contactSendBtn" data-i18n="contact.send">Send</button>
     </div>
     <a class="arrow_up" href="#"><img src="./images/Arrow Up.png" alt="Back to top"></a>

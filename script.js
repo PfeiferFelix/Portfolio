@@ -1,12 +1,17 @@
-/**
- * @file Portfolio interactivity: mobile navigation menu toggling and the
- * client-side validation and submission of the contact form.
- */
 
-// Wire up DOM event listeners once the script loads. Each lookup is guarded so
-// the script works on pages where a given element is absent.
+/**
+ * Wires up the contact form and mobile menu event listeners on load; each lookup
+ * is guarded so it works on pages where a given element is absent.
+ */
 let contactSendBtn = document.getElementById("contactSendBtn");
-if (contactSendBtn) contactSendBtn.addEventListener("click", sendContactForm);
+if (contactSendBtn) {
+    contactSendBtn.addEventListener("click", sendContactForm);
+    ["contactName", "contactEmail", "contactMessage"].forEach(function (id) {
+        const field = document.getElementById(id);
+        if (field) field.addEventListener("input", updateSendButtonState);
+    });
+    updateSendButtonState();
+}
 
 let burgerBtn = document.getElementById("burgerBtn");
 if (burgerBtn) burgerBtn.addEventListener("click", openMobileMenu);
@@ -35,6 +40,20 @@ function closeMobileMenu() {
 }
 
 /**
+ * Enables the Send button only once at least one field has been filled, keeping
+ * it inert while the form is completely empty.
+ *
+ * @returns {void}
+ */
+function updateSendButtonState() {
+    if (!contactSendBtn) return;
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+    contactSendBtn.disabled = !name && !email && !message;
+}
+
+/**
  * Clears all contact form fields after a successful submission.
  */
 function clearContactForm() {
@@ -42,6 +61,7 @@ function clearContactForm() {
     document.getElementById("contactEmail").value = "";
     document.getElementById("contactMessage").value = "";
     document.getElementById("privacy").checked = false;
+    updateSendButtonState();
 }
 
 

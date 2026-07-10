@@ -152,7 +152,7 @@ header::before {
 }
 
 .me {
-    min-height: calc(100vh - 112px);
+    min-height: min(calc(100vh - 112px), 760px);
     position: relative;
 }
 
@@ -219,9 +219,9 @@ h1 {
 .why_me {
     margin-top: 100px;
     width: 100%;
-    min-height: calc(100vh - 112px);
+    min-height: min(calc(100vh - 112px), 700px);
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-between;
     gap: 60px;
 }
@@ -537,6 +537,14 @@ h1 {
     max-width: 540px;
 }
 
+/* Groups an input with its error text so the reserved error slot stays attached
+   to the field and toggling the message never shifts the surrounding layout. */
+.contact_field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
 .contact_right {
     display: flex;
     flex-direction: column;
@@ -608,12 +616,14 @@ h1 {
     accent-color: #E15544;
     background-color: transparent;
     margin-top: 3px;
+    cursor: pointer;
 }
 
 .lable_privacy_policy {
     color: white;
     font-family: "Roboto Mono", monospace;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .contact_Send_btn {
@@ -626,6 +636,11 @@ h1 {
     font-size: 18px;
     font-family: "Roboto Mono", monospace;
     cursor: pointer;
+}
+
+.contact_Send_btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
 }
 
 .arrow_up {
@@ -701,7 +716,7 @@ footer {
 
 @media (min-width: 1440px) {
     .me {
-        height: calc(100vh - 112px);
+        height: min(calc(100vh - 112px), 820px);
         min-height: 750px;
     }
 
@@ -727,7 +742,7 @@ footer {
 
     .felix_png {
         right: 120px;
-        height: 62vh;
+        height: min(62vh, 640px);
         width: auto;
         aspect-ratio: 539 / 554;
     }
@@ -1599,6 +1614,16 @@ footer {
         justify-content: center;
     }
 
+    /* Dissolve the field wrappers so the flattened, order-based mobile layout is
+       restored; on mobile empty errors collapse again instead of reserving space. */
+    .contact_field {
+        display: contents;
+    }
+
+    .error__text:empty {
+        display: none;
+    }
+
     .contact_Send_btn {
         order: 5;
         align-self: center;
@@ -1742,8 +1767,5 @@ footer {
     color: #ff3d00;
     padding-left: 4px;
     font-family: "Roboto Mono", monospace;
-}
-
-.error__text:empty {
-    display: none;
+    min-height: 15px;
 }

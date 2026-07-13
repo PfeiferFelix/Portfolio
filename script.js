@@ -1,16 +1,63 @@
 
 /**
+ * IDs of the text contact fields mapped to the validator that shows or clears
+ * their inline error. Used for wiring blur/input listeners and live validation.
+ */
+const CONTACT_FIELD_VALIDATORS = {
+    contactName: validateName,
+    contactEmail: validateContactEmail,
+    contactMessage: validateContactMessage,
+};
+
+/**
+ * Tracks which fields the user has already interacted with (left at least once),
+ * so errors are only shown after a field has been touched — never on page load.
+ * @type {Set<string>}
+ */
+const touchedContactFields = new Set();
+
+/**
  * Wires up the contact form and mobile menu event listeners on load; each lookup
  * is guarded so it works on pages where a given element is absent.
  */
 let contactSendBtn = document.getElementById("contactSendBtn");
 if (contactSendBtn) {
     contactSendBtn.addEventListener("click", sendContactForm);
-    ["contactName", "contactEmail", "contactMessage"].forEach(function (id) {
-        const field = document.getElementById(id);
-        if (field) field.addEventListener("input", updateSendButtonState);
-    });
+    Object.keys(CONTACT_FIELD_VALIDATORS).forEach(wireContactField);
+    wirePrivacyBox();
     updateSendButtonState();
+}
+
+/**
+ * Wires blur/input listeners for one contact field: leaving it marks it touched
+ * and validates it, and once touched it re-validates live while typing.
+ * @param {string} id - ID of the contact field to wire.
+ */
+function wireContactField(id) {
+    const field = document.getElementById(id);
+    if (!field) return;
+    field.addEventListener("blur", function () {
+        touchedContactFields.add(id);
+        CONTACT_FIELD_VALIDATORS[id]();
+        updateSendButtonState();
+    });
+    field.addEventListener("input", function () {
+        if (touchedContactFields.has(id)) CONTACT_FIELD_VALIDATORS[id]();
+        updateSendButtonState();
+    });
+}
+
+/**
+ * Wires the privacy checkbox to mark itself touched and re-validate on change.
+ */
+function wirePrivacyBox() {
+    const privacyBox = document.getElementById("privacy");
+    if (!privacyBox) return;
+    privacyBox.addEventListener("change", function () {
+        touchedContactFields.add("privacy");
+        checkPrivacy();
+        updateSendButtonState();
+    });
 }
 
 let burgerBtn = document.getElementById("burgerBtn");
@@ -40,27 +87,33 @@ function closeMobileMenu() {
 }
 
 /**
- * Enables the Send button only once at least one field has been filled, keeping
- * it inert while the form is completely empty.
+ * Enables the Send button only while the entire form is valid: a name with at
+ * least one letter, a valid email, a non-empty message and privacy consent.
+ * The button stays disabled until every requirement is met.
  *
  * @returns {void}
  */
 function updateSendButtonState() {
     if (!contactSendBtn) return;
-    const name = document.getElementById("contactName").value.trim();
-    const email = document.getElementById("contactEmail").value.trim();
-    const message = document.getElementById("contactMessage").value.trim();
-    contactSendBtn.disabled = !name && !email && !message;
+    contactSendBtn.disabled = !(isNameValid() && isEmailValid() && isMessageValid() && isPrivacyChecked());
 }
 
 /**
- * Clears all contact form fields after a successful submission.
+ * Clears all contact form fields, errors and touched state after a successful
+ * submission, then re-evaluates the (now disabled) Send button.
  */
 function clearContactForm() {
     document.getElementById("contactName").value = "";
     document.getElementById("contactEmail").value = "";
     document.getElementById("contactMessage").value = "";
     document.getElementById("privacy").checked = false;
+
+    touchedContactFields.clear();
+    clearFieldError("contactName", "contactNameError");
+    clearFieldError("contactEmail", "contactEmailError");
+    clearFieldError("contactMessage", "contactMessageError");
+    clearPrivacyError();
+
     updateSendButtonState();
 }
 
@@ -95,6 +148,28 @@ function clearFieldError(inputId, errorId) {
 }
 
 /**
+ * Shows the localized privacy-consent error message.
+ * @returns {void}
+ */
+function showPrivacyError() {
+    const privacyError = document.getElementById("contactPrivacyError");
+    if (!privacyError) return;
+    privacyError.setAttribute("data-i18n", "contact.error.privacy");
+    privacyError.textContent = window.i18n.t("contact.error.privacy");
+}
+
+/**
+ * Clears the privacy-consent error message.
+ * @returns {void}
+ */
+function clearPrivacyError() {
+    const privacyError = document.getElementById("contactPrivacyError");
+    if (!privacyError) return;
+    privacyError.removeAttribute("data-i18n");
+    privacyError.textContent = "";
+}
+
+/**
  * Checks whether a string is a syntactically valid email address.
  *
  * @param {string} contactEmail - The email address to validate.
@@ -104,24 +179,53 @@ function isValidEmail(contactEmail) {
     return /^[^\s@]+@[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?)+$/.test(contactEmail);
 }
 
+/**
+ * @returns {boolean} `true` if the name is non-empty and contains at least one letter.
+ */
+function isNameValid() {
+    const name = document.getElementById("contactName").value.trim();
+    return name.length > 0 && /[a-zA-ZÀ-ÿ]/.test(name);
+}
 
 /**
- * Validates the contact form email field and shows an error if it is invalid.
+ * @returns {boolean} `true` if the email field holds a syntactically valid address.
+ */
+function isEmailValid() {
+    return isValidEmail(document.getElementById("contactEmail").value.trim());
+}
+
+/**
+ * @returns {boolean} `true` if the message field is not empty.
+ */
+function isMessageValid() {
+    return document.getElementById("contactMessage").value.trim().length > 0;
+}
+
+/**
+ * @returns {boolean} `true` if the privacy checkbox is checked.
+ */
+function isPrivacyChecked() {
+    return document.getElementById("privacy").checked;
+}
+
+
+/**
+ * Validates the email field: shows the error when invalid, clears it when valid.
  *
  * @returns {boolean} `true` if the entered email is valid, otherwise `false`.
  */
 function validateContactEmail() {
-    const contactEmail = document.getElementById("contactEmail").value.trim();
-    if (!isValidEmail(contactEmail)) {
+    if (!isEmailValid()) {
         showFieldError("contactEmail", "contactEmailError", "contact.error.email");
         return false;
     }
+    clearFieldError("contactEmail", "contactEmailError");
     return true;
 }
 
 /**
- * Validates the contact form name field, requiring a non-empty value that
- * contains at least one letter, and shows an error if it is invalid.
+ * Validates the name field, requiring a non-empty value that contains at least
+ * one letter. Shows the matching error when invalid, clears it when valid.
  *
  * @returns {boolean} `true` if the entered name is valid, otherwise `false`.
  */
@@ -135,53 +239,51 @@ function validateName() {
         showFieldError("contactName", "contactNameError", "contact.error.name.letters");
         return false;
     }
+    clearFieldError("contactName", "contactNameError");
     return true;
 }
+
 /**
- * Validates the contact form message field, requiring a non-empty value, and
- * shows an error if it is invalid.
+ * Validates the message field, requiring a non-empty value. Shows the error when
+ * invalid, clears it when valid.
  *
  * @returns {boolean} `true` if a message was entered, otherwise `false`.
  */
 function validateContactMessage() {
-    const message = document.getElementById("contactMessage").value.trim();
-    if (!message) {
+    if (!isMessageValid()) {
         showFieldError("contactMessage", "contactMessageError", "contact.error.message");
         return false;
     }
+    clearFieldError("contactMessage", "contactMessageError");
     return true;
 }
 
 
 /**
- * Ensures the privacy policy checkbox is checked and shows a localized error if not.
+ * Ensures the privacy policy checkbox is checked. Shows the error when it is not,
+ * clears it when it is.
  *
  * @returns {boolean} `true` if the privacy checkbox is checked, otherwise `false`.
  */
 function checkPrivacy() {
-    const privacy = document.getElementById("privacy");
-    if (!privacy.checked) {
-        const privacyError = document.getElementById("contactPrivacyError");
-        if (privacyError) {
-            privacyError.setAttribute("data-i18n", "contact.error.privacy");
-            privacyError.textContent = window.i18n.t("contact.error.privacy");
-        }
+    if (!isPrivacyChecked()) {
+        showPrivacyError();
         return false;
     }
+    clearPrivacyError();
     return true;
 }
 
 /**
- * Runs all contact form field validations. Clears previous errors first, then
- * validates name, email, message and privacy consent.
+ * Runs all contact form field validations, showing errors for every invalid
+ * field. Marks all fields as touched so subsequent live validation stays active.
  *
  * @returns {boolean} `true` if every field is valid, otherwise `false`.
  */
 function validateContactForm() {
-    clearFieldError("contactName", "contactNameError");
-    clearFieldError("contactEmail", "contactEmailError");
-    clearFieldError("contactMessage", "contactMessageError");
-    clearFieldError("privacy", "contactPrivacyError");
+    ["contactName", "contactEmail", "contactMessage", "privacy"].forEach(function (id) {
+        touchedContactFields.add(id);
+    });
 
     let isValid = true;
     if (!validateName()) isValid = false;
@@ -201,19 +303,23 @@ function validateContactForm() {
 async function sendContactForm() {
     if (!validateContactForm()) return;
 
-    let data = {
+    let response = await fetch("contact_form_mail.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(getContactFormData()),
+    });
+
+    if (response.ok) clearContactForm();
+}
+
+/**
+ * Reads the current contact form field values into a plain payload object.
+ * @returns {{name: string, email: string, message: string}}
+ */
+function getContactFormData() {
+    return {
         name: document.getElementById("contactName").value,
         email: document.getElementById("contactEmail").value,
         message: document.getElementById("contactMessage").value,
     };
-
-    let response = await fetch("contact_form_mail.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    });
-
-    if (response.ok) {
-        clearContactForm();
-    }
 }

@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Felix Pfeifer</title>
     <link rel="icon" type="image/x-icon" href="./images/Favicon.png" />
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -41,7 +42,7 @@
     <div class="mobile_menu" id="mobileMenu">
         <button class="mobile_menu_close" id="mobileMenuClose" aria-label="Menü schließen">&times;</button>
         <nav class="mobile_nav_links">
-            <a class="mobile_link" href="#why-me" data-i18n="nav.whyme">Warum ich</a>
+            <a  class="mobile_link" href="#why-me" data-i18n="nav.whyme">Warum ich</a>
             <a class="mobile_link" href="#skills" data-i18n="nav.skills">Skills</a>
             <a class="mobile_link" href="#projects" data-i18n="nav.projects">Projekte</a>
             <a class="mobile_link" href="#contact" data-i18n="nav.contact">Kontakt</a>
@@ -53,11 +54,13 @@
     </div>
 
     <div class="me">
-        <a class="contact_me_tab" href="#contact" data-i18n="hero.contactTab">Contact me</a>
-        <a class="scroll_arrow" href="#why-me"><img src="./images/Arrow down.png" alt="Scroll down" /></a>
-        <div class="me_text_group">
-            <span class="me_txt">Frontend Developer</span>
-            <h1>Felix Pfeifer</h1>
+        <div class="me_content">
+            <div class="me_text_group">
+                <span class="me_txt">Frontend Developer</span>
+                <h1>Felix Pfeifer</h1>
+            </div>
+            <a class="contact_me_tab" href="#contact" data-i18n="hero.contactTab">Contact me</a>
+            <a class="scroll_arrow" href="#why-me"><img src="./images/Arrow down.png" alt="Scroll down" /></a>
         </div>
         <img class="felix_png" src="./images/Felix1.png" alt="" />
     </div>
@@ -87,58 +90,80 @@
                         <span data-i18n-html="whyme.remote">open to <br />
                             work remote</span>
                     </span>
-                    <span class="i_am_arrow_end"><img src="./images/Arrow 4.png" alt="" /></span>
+                    <span  class="i_am_arrow_end"><img src="./images/Arrow 4.png" alt="" /></span>
                 </div>
             </div>
             <a href="#contact"><button class="let_us_talk_btn" data-i18n="whyme.talkBtn">Let's Talk</button></a>
         </div>
     </div>
 
-    <section class="skills-section" id="skills">
+    <section  class="skills-section" id="skills">
         <h2 class="headline_skills" data-i18n="skills.headline">My Skills</h2>
         <div class="skills-grid">
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Angular_noName.png" alt="Angular" />
                 <span class="skill-label">Angular</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Typescript_noName.png" alt="TypeScript" />
                 <span class="skill-label">TypeScript</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/JS_noName.png" alt="JavaScript" />
                 <span class="skill-label">JavaScript</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Html_noName.png" alt="HTML" />
                 <span class="skill-label">HTML</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Css_noName.png" alt="CSS" />
                 <span class="skill-label">CSS</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Api_noname.png" alt="REST-API" />
                 <span class="skill-label">REST-API</span>
             </div>
 
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Supabase_noName.png" alt="Supabase" />
                 <span class="skill-label">Supabase</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Git_noName.png" alt="Git" />
                 <span class="skill-label">Git</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Scrum_noName.png" alt="Scrum" />
                 <span class="skill-label">Scrum</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Material_noName.png" alt="Material Design" />
                 <span class="skill-label">Material design</span>
             </div>
-            <div class="skill-item">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="skill-item">
                 <img src="./images/Chalangeme_noName.png" alt="Challenge me" />
                 <span class="skill-label">Challenge me</span>
             </div>
@@ -147,8 +172,10 @@
 
     <section class="portfolio-section" id="projects">
         <h2 class="headline_myProjects" data-i18n="projects.headline">My Projects</h2>
-        <div class="Pollo_Loco">
-            <img class="Pollo_Loco_img" src="images/startscreen_1.png" alt="" />
+        <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" class="Pollo_Loco">
+            <img  class="Pollo_Loco_img" src="images/startscreen_1.png" alt="" />
             <div>
                 <p class="headline_elPolloLoco">EL Pollo Loco</p>
                 <p class="Project_Languages">JavaScript | HTML | CSS</p>
@@ -161,8 +188,10 @@
             </div>
         </div>
 
-        <div class="Pollo_Loco">
-            <div class="Join_Info">
+        <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" class="Pollo_Loco">
+            <div  class="Join_Info">
                 <p class="headline_elPolloLoco">Join</p>
                 <p class="Project_Languages">JavaScript | HTML | CSS | Firebase</p>
                 <p class="Project_Description" data-i18n-html="projects.join.desc">Team-based Kanban task manager for creating, organizing,<br>
@@ -174,7 +203,9 @@
             </div>
             <img class="Join_img" src="images/join.png" alt="" />
         </div>
-        <div class="Pollo_Loco">
+        <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" class="Pollo_Loco">
             <img class="Pollo_Loco_img" src="images/Poke_API.png" alt="" />
             <div>
                 <p class="headline_elPolloLoco">Poke API</p>
@@ -192,17 +223,23 @@
             <h3 class="headline_testimonials" data-i18n="testimonials.headline">Need a teamplayer? Here&rsquo;s what my colleagues say about me</h3>
             <div class="testimonials_row">
                 <img class="testimonials_arrow" src="./images/Arrow_feedback.png" alt="" />
-                <div class="testimonial">
+                <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" class="testimonial">
                     <p class="testimonial_name">Noah Mueller</p>
                     <p class="testimonial_project" data-i18n="testimonials.1.project">Project Sharkie</p>
                     <p class="testimonial_text" data-i18n="testimonials.1.text">&rsquo;&rsquo;Felix had to develop, format and deliver content in collaboration with the team members. He is a reliable and friendly person.&rsquo;&rsquo;</p>
                 </div>
-                <div class="testimonial">
+                <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" class="testimonial">
                     <p class="testimonial_name">Evelyn Marx</p>
                     <p class="testimonial_project" data-i18n="testimonials.2.project">Project Pollo Loco</p>
                     <p class="testimonial_text" data-i18n="testimonials.2.text">&rsquo;&rsquo; He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code. &rsquo;&rsquo;</p>
                 </div>
-                <div class="testimonial">
+                <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" class="testimonial">
                     <p class="testimonial_name">James Rugman</p>
                     <p class="testimonial_project" data-i18n="testimonials.3.project">Project Join</p>
                     <p class="testimonial_text" data-i18n="testimonials.3.text">&rsquo;&rsquo; He is a reliable and friendly person. Work in a structured way and write a clear code. I recommend him as a colleague.&rsquo;&rsquo;</p>
@@ -279,6 +316,10 @@
         </div>
     </footer>
     </div>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
     <script src="i18n.js?v=2"></script>
     <script src="script.js?v=3"></script>
 </body>

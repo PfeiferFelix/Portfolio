@@ -147,6 +147,7 @@ header::before {
     color: #E15544;
     font-size: 46px;
     padding-top: 10px;
+    margin-top: 30px;
     font-family: "Roboto Mono", monospace;
     margin-left: 100px;
 }
@@ -154,6 +155,10 @@ header::before {
 .me {
     min-height: min(calc(100vh - 112px), 760px);
     position: relative;
+}
+
+.me_content {
+    display: contents;
 }
 
 .contact_me_tab {
@@ -185,6 +190,7 @@ header::before {
     transform: translateX(-50%);
     cursor: pointer;
     transition: transform 0.2s ease;
+    z-index: 2;
 }
 
 .scroll_arrow:hover {
@@ -564,8 +570,6 @@ h1 {
     max-width: 540px;
 }
 
-/* Groups an input with its error text so the reserved error slot stays attached
-   to the field and toggling the message never shifts the surrounding layout. */
 .contact_field {
     display: flex;
     flex-direction: column;
@@ -771,32 +775,49 @@ footer {
 
 @media (min-width: 1440px) {
     .me {
-        height: min(calc(100vh - 112px), 820px);
-        min-height: 750px;
+        min-height: calc(100vh - 112px);
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+    }
+
+    .me_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 72px;
     }
 
     .me_text_group {
-        bottom: auto;
-        top: 80px;
-        left: 100px;
+        position: static;
+        margin: 0;
+        align-self: stretch;
     }
 
     .contact_me_tab {
+        position: static;
         writing-mode: horizontal-tb;
-        left: 42%;
-        top: 340px;
-        transform: translateX(-50%);
-        padding: 10px 18px;
+        transform: none;
+        letter-spacing: 4px;
+        padding: 12px 22px;
     }
 
     .scroll_arrow {
-        left: 42%;
-        top: 420px;
-        transform: translateX(-50%);
+        position: static;
+        transform: none;
+    }
+
+    .scroll_arrow:hover {
+        transform: translateY(4px);
     }
 
     .felix_png {
-        right: 120px;
+        right: 60px;
+        bottom: 0;
         height: min(62vh, 640px);
         width: auto;
         aspect-ratio: 539 / 554;
@@ -1747,8 +1768,7 @@ footer {
         gap: 10px;
     }
 }
-/* Legal / privacy pages have little content – keep the footer pinned to the
-   bottom on very large screens instead of floating in the middle of the page. */
+
 .page-container:has(.legal_page) {
     display: flex;
     flex-direction: column;
@@ -1829,6 +1849,7 @@ footer {
 }
 .error__text {
     font-size: 12px;
+    line-height: 15px;
     color: #ff3d00;
     padding-left: 4px;
     font-family: "Roboto Mono", monospace;

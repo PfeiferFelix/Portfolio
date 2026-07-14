@@ -303,13 +303,47 @@ function validateContactForm() {
 async function sendContactForm() {
     if (!validateContactForm()) return;
 
-    let response = await fetch("contact_form_mail.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(getContactFormData()),
-    });
+    contactSendBtn.disabled = true;
 
-    if (response.ok) clearContactForm();
+    try {
+        let response = await fetch("contact_form_mail.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(getContactFormData()),
+        });
+
+        if (response.ok) {
+            clearContactForm();
+            showToast("contact.toast");
+        } else {
+            showToast("contact.toast.error");
+            updateSendButtonState();
+        }
+    } catch (error) {
+        showToast("contact.toast.error");
+        updateSendButtonState();
+    }
+}
+
+/**
+ * Displays a localized confirmation or error message above the page content.
+ * @param {string} messageKey - i18n key for the toast text.
+ * @returns {void}
+ */
+function showToast(messageKey) {
+    const existingToast = document.querySelector(".toast");
+    if (existingToast) existingToast.remove();
+
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    toast.textContent = window.i18n.t(messageKey);
+    document.body.appendChild(toast);
+
+    window.setTimeout(function () {
+        toast.remove();
+    }, 3500);
 }
 
 /**

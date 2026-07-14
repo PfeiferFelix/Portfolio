@@ -48,7 +48,7 @@ header::before {
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    background: rgba(11, 4, 45, 0.9);
+    background: rgba(11, 4, 45, 1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: -1;
@@ -497,7 +497,7 @@ h1 {
 }
 
 .testimonials {
-    margin-bottom: 150px;
+    margin-bottom: 40px;
 }
 
 .headline_testimonials {
@@ -1271,12 +1271,13 @@ footer {
 
     .why_me_txt {
         text-align: center;
+        max-width: 100%;
     }
 
     .let_us_talk_btn {
         margin-top: 10px;
         margin-right: 0;
-        margin-left: 500px;
+        margin-left: 0;
     }
 }
 
@@ -1780,7 +1781,7 @@ footer {
 }
 
 .legal_page {
-    max-width: 1000px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 60px 20px 140px 20px;
     font-family: "Roboto Mono", monospace;
@@ -1854,4 +1855,40 @@ footer {
     padding-left: 4px;
     font-family: "Roboto Mono", monospace;
     min-height: 15px;
+}
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 40px;
+    z-index: 200;
+    background-color: #0B042D;
+    color: #3DCFB6;
+    border: 1px solid #3DCFB6;
+    border-radius: 5px;
+    padding: 14px 24px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 16px;
+    max-width: calc(100vw - 40px);
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    animation: toast_in_out 3.5s ease forwards;
+}
+
+@keyframes toast_in_out {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 16px);
+    }
+
+    12%,
+    88% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 16px);
+    }
 }

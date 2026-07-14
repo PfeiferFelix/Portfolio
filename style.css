@@ -1872,7 +1872,7 @@ footer {
     max-width: calc(100vw - 40px);
     text-align: center;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-    animation: toast_in_out 3.5s ease forwards;
+    animation: toast_in_out 6s ease forwards;
 }
 
 @keyframes toast_in_out {
@@ -1881,8 +1881,8 @@ footer {
         transform: translate(-50%, 16px);
     }
 
-    12%,
-    88% {
+    8%,
+    92% {
         opacity: 1;
         transform: translate(-50%, 0);
     }

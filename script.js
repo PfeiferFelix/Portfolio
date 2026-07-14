@@ -343,7 +343,7 @@ function showToast(messageKey) {
 
     window.setTimeout(function () {
         toast.remove();
-    }, 3500);
+    }, 6000);
 }
 
 /**

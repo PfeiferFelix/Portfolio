@@ -162,6 +162,10 @@ header::before {
     display: contents;
 }
 
+.cta_group {
+    display: contents;
+}
+
 .contact_me_tab {
     position: absolute;
     left: 100px;
@@ -789,6 +793,14 @@ footer {
         gap: 30px;
     }
 
+    .cta_group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: fit-content;
+    }
+
     .me_text_group {
         position: static;
         margin: 0;
@@ -835,33 +847,54 @@ footer {
 
 @media (min-width: 1600px) {
     .page-container {
-        max-width: 1760px;
+        max-width: 2400px;
     }
 
     .me {
         align-items: flex-start;
-        padding-left: 160px;
+        padding-left: clamp(160px, 7vw, 240px);
     }
 
     .me_content {
-        padding-top: 240px;
+        padding-top: clamp(240px, 16vh, 380px);
+        align-items: flex-start;
+        max-width: none;
+        position: relative;
+        z-index: 2;
     }
 
     .me_txt {
-        font-size: 52px;
+        font-size: clamp(44px, 2.4vw, 64px);
     }
 
     h1 {
-        font-size: 96px;
+        font-size: clamp(84px, 4.6vw, 130px);
+        white-space: nowrap;
+    }
+
+    .cta_group {
+        align-self: center;
+        gap: clamp(28px, 2.2vw, 48px);
+    }
+
+    .contact_me_tab {
+        font-size: clamp(18px, 1.15vw, 26px);
+        letter-spacing: 5px;
+        padding: clamp(14px, 0.9vw, 20px) clamp(24px, 1.8vw, 40px);
+    }
+
+    .scroll_arrow img {
+        width: clamp(26px, 1.6vw, 38px);
+        height: clamp(60px, 3.6vw, 86px);
     }
 
     .felix_png {
-        left: 56%;
-        right: auto;
-        transform: translateX(-50%);
+        left: auto;
+        right: clamp(40px, 5vw, 200px);
+        transform: none;
         bottom: 0;
         width: auto;
-        height: min(104vh, 1180px);
+        height: min(100vh, clamp(1000px, 52vw, 1350px));
     }
 }
 

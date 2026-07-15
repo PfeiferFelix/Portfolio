@@ -838,18 +838,30 @@ footer {
         max-width: 1760px;
     }
 
+    .me {
+        align-items: flex-start;
+        padding-left: 160px;
+    }
+
+    .me_content {
+        padding-top: 240px;
+    }
+
     .me_txt {
-        font-size: 46px;
+        font-size: 52px;
     }
 
     h1 {
-        font-size: 84px;
+        font-size: 96px;
     }
 
     .felix_png {
-        right: 70px;
-        width: clamp(640px, 40vw, 800px);
-        height: auto;
+        left: 56%;
+        right: auto;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: auto;
+        height: min(104vh, 1180px);
     }
 }
 

@@ -352,8 +352,8 @@ function showToast(messageKey) {
  */
 function getContactFormData() {
     return {
-        name: document.getElementById("contactName").value,
-        email: document.getElementById("contactEmail").value,
-        message: document.getElementById("contactMessage").value,
+        name: document.getElementById("contactName").value.trim(),
+        email: document.getElementById("contactEmail").value.trim(),
+        message: document.getElementById("contactMessage").value.trim(),
     };
 }

@@ -33,12 +33,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
             exit;
         }
 
-        $email = $params->email ?? '';
-        $name = $params->name ?? '';
-        $userMessage = $params->message ?? '';
+        $email = trim($params->email ?? '');
+        $name = trim($params->name ?? '');
+        $userMessage = trim($params->message ?? '');
 
         // Basic validation
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || empty($name) || empty($userMessage)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || empty($name) || empty($userMessage)
+            || mb_strlen($name) > 30 || mb_strlen($email) > 30) {
             http_response_code(400);
             echo json_encode(['success' => false, 'error' => 'Invalid input data']);
             exit;

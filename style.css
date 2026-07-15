@@ -10,6 +10,7 @@ button {
 
 html {
     scroll-padding-top: 120px;
+    overflow-x: clip;
 }
 
 body {
@@ -153,7 +154,7 @@ header::before {
 }
 
 .me {
-    min-height: min(calc(100vh - 112px), 760px);
+    min-height: calc(100dvh - 112px);
     position: relative;
 }
 
@@ -773,9 +774,9 @@ footer {
     font-size: 16px;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1101px) {
     .me {
-        min-height: calc(100vh - 112px);
+        min-height: calc(100dvh - 112px);
         display: flex;
         align-items: center;
         padding-left: 60px;
@@ -786,10 +787,6 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 30px;
-    }
-
-    h1 {
-        font-size: 72px;
     }
 
     .me_text_group {
@@ -816,11 +813,43 @@ footer {
     }
 
     .felix_png {
-        right: 60px;
+        right: 40px;
         bottom: 0;
-        height: min(62vh, 640px);
-        width: auto;
+        width: clamp(340px, 34vw, 520px);
+        height: auto;
         aspect-ratio: 539 / 554;
+    }
+}
+
+@media (min-width: 1440px) {
+    h1 {
+        font-size: 72px;
+    }
+
+    .felix_png {
+        right: 60px;
+        width: auto;
+        height: min(62vh, 640px);
+    }
+}
+
+@media (min-width: 1600px) {
+    .page-container {
+        max-width: 1760px;
+    }
+
+    .me_txt {
+        font-size: 46px;
+    }
+
+    h1 {
+        font-size: 84px;
+    }
+
+    .felix_png {
+        right: 70px;
+        width: clamp(640px, 40vw, 800px);
+        height: auto;
     }
 }
 
@@ -859,16 +888,6 @@ footer {
         margin-right: 100px;
         font-family: "Roboto Mono", monospace;
         font-size: 18px;
-    }
-
-    .felix_png {
-        position: absolute;
-        right: 200px;
-        bottom: 40px;
-        height: 520px;
-        width: 460px;
-        object-fit: cover;
-        border-radius: 5px;
     }
 
     h1 {
@@ -1786,6 +1805,8 @@ footer {
     padding: 60px 20px 140px 20px;
     font-family: "Roboto Mono", monospace;
     color: #3DCFB6;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .legal_headline {

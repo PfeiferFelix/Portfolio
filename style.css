@@ -1254,9 +1254,10 @@ footer {
     .felix_png {
         order: -1;
         position: static;
-        width: 100%;
-        max-width: 400px;
+        width: auto;
+        max-width: min(400px, 100%);
         height: auto;
+        max-height: 42dvh;
         aspect-ratio: auto;
     }
 
@@ -1428,9 +1429,10 @@ footer {
     .felix_png {
         order: -1;
         position: static;
-        width: 100%;
-        max-width: 380px;
+        width: auto;
+        max-width: min(380px, 100%);
         height: auto;
+        max-height: 45dvh;
     }
 
     .me_text_group {

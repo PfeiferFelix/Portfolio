@@ -154,7 +154,7 @@ header::before {
 }
 
 .me {
-    min-height: calc(100dvh - 112px);
+    min-height: 100dvh;
     position: relative;
 }
 
@@ -226,7 +226,7 @@ h1 {
 .felix_png {
     position: absolute;
     right: 50px;
-    bottom: 0;
+    bottom: 112px;
     height: 554px;
     width: 539px;
     object-fit: cover;
@@ -776,7 +776,7 @@ footer {
 
 @media (min-width: 1101px) {
     .me {
-        min-height: calc(100dvh - 112px);
+        min-height: 100dvh;
         display: flex;
         align-items: center;
         padding-left: 60px;
@@ -814,7 +814,7 @@ footer {
 
     .felix_png {
         right: 40px;
-        bottom: 0;
+        bottom: 112px;
         width: clamp(340px, 34vw, 520px);
         height: auto;
         aspect-ratio: 539 / 554;
